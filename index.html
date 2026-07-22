@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>KROSH | Napravi svoju kombinaciju</title>
+
+    <meta
+        name="description"
+        content="Kombinuj boju torbe i vrećicu i pronađi svoju omiljenu KROSH kombinaciju. Ručno izrađene torbe od recikliranog pamuka i pažljivo odabranih upcycle materijala."
+    >
+
+    <meta
+        name="keywords"
+        content="KROSH, heklane torbe, crochet bags, handmade bags, ručni rad, slow fashion, održiva moda, reciklirani pamuk, Beograd"
+    >
+
+    <meta
+        name="author"
+        content="KROSH"
+    >
+
+    <meta
+        property="og:title"
+        content="KROSH | Napravi svoju kombinaciju"
+    >
+
+    <meta
+        property="og:description"
+       content="Kombinuj boju torbe i vrećicu i pronađi svoju omiljenu KROSH kombinaciju. Ručno izrađene torbe od recikliranog pamuka i pažljivo odabranih upcycle materijala."
+
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <link
+        rel="icon"
+        href="images/ui/favicon.svg"
+        type="image/svg+xml"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+</head>
+
+<body>
+
+    <main class="page">
+
+        <!-- INTRO -->
+
+        <header class="intro">
+
+            <div class="logo">
+                <img
+                    src="images/logo/krosh-logo.svg"
+                    alt="KROSH logo"
+                >
+            </div>
+
+            <p class="description">
+                Ručno heklane torbe od
+                <strong>recikliranog pamuka</strong>
+                sa zamenjivim vrećicama od
+                <strong>polovnih materijala</strong>.
+            </p>
+
+            <p class="description secondary">
+                Odaberi boju torbe, kombinuj je sa jednom ili više
+                vrećica i napravi svoju kombinaciju.
+            </p>
+
+        </header>
+
+
+        <!-- CONFIGURATOR -->
+
+        <section class="configurator">
+
+            <div class="configurator-layout">
+
+                <!-- PREVIEW -->
+
+                <div class="configurator-preview">
+
+                    <div class="preview">
+                        <img
+                            id="combination-image"
+                            src="images/combinations/bag-pink_pouch-fruit.webp"
+                            alt="KROSH heklana torba sa zamenjivom vrećicom"
+                        >
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="configurator-controls">
+
+                    <div class="selection-group">
+
+                        <div class="selection-header">
+
+                            <h2>Izaberi boju torbe</h2>
+
+                            <p
+                                id="selected-bag-label"
+                                class="selected-option-label"
+                            >
+                                Hot Pink
+                            </p>
+
+                        </div>
+
+                        <div
+                            id="bag-wrapper"
+                            class="options-wrapper"
+                        >
+                            <div
+                                id="bag-options"
+                                class="options-row"
+                            ></div>
+                        </div>
+
+                    </div>
+
+
+                    <div class="selection-group">
+
+                        <div class="selection-header">
+                            <h2>Izaberi vrećicu</h2>
+                        </div>
+
+                        <div
+                            id="pouch-wrapper"
+                            class="options-wrapper"
+                        >
+                            <div
+                                id="pouch-options"
+                                class="options-row"
+                            ></div>
+                        </div>
+
+                    </div>
+
+
+                    <a
+                        href="https://ig.me/m/krosh.rs"
+                        class="reserve-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Rezerviši svoju kombinaciju
+                    </a>
+
+                    <p class="reserve-note">
+                        Nakon klika bićeš preusmerena na KROSH Instagram,
+                        gde možeš da završiš porudžbinu. Poruka se neće
+                        poslati automatski.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAQ -->
+
+        <section class="faq">
+
+            <img
+                src="images/ui/faq.svg"
+                alt="FAQ"
+                class="faq-title"
+            >
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>
+                        Da li mogu da uzmem više od jedne vrećice?
+                    </span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            Naravno! Zapravo, upravo je to ideja KROSH torbi.
+                            Jedna torba može da se kombinuje sa više različitih
+                            vrećica, pa lako dobijaš potpuno novi izgled bez
+                            potrebe da kupuješ novu torbu. To je isplativije za
+                            tebe, a ujedno podstiče promišljeniji i održiviji
+                            pristup modi.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>
+                        Da li su sve kombinacije odmah dostupne?
+                    </span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            Većina prikazanih kombinacija je odmah dostupna
+                            za slanje ili lično preuzimanje u Beogradu.
+                        </p>
+
+                        <p>
+                            Ukoliko je određena kombinacija već prodata,
+                            a za izradu vrećice postoji dovoljno materijala,
+                            mogu da napravim novu u roku od približno 7 dana.
+                        </p>
+
+                        <p>
+                            Pošto svaki komad izrađujem ručno i u malim serijama,
+                            dostupnost pojedinih kombinacija može da varira.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>Koje su veličine torbe?</span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            Svaka torba je ručno heklana od recikliranog pamuka,
+                            pa se dimenzije mogu neznatno razlikovati.
+                        </p>
+
+                        <p>
+                            Reciklirani pamuk dolazi u različitim debljinama
+                            i serijama, zbog čega nijedne dve torbe nisu
+                            potpuno identične.
+                        </p>
+
+                        <p>
+                            I vrećice izrađujem u različitim veličinama,
+                            u zavisnosti od raspoloživog materijala, ali je
+                            svaka vrećica kompatibilna sa svakom torbom.
+                        </p>
+
+                        <p>
+                            Ako te zanima tačna dimenzija određene kombinacije,
+                            slobodno mi piši na Instagramu.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>
+                        Od kojih materijala su napravljene?
+                    </span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            Torbe heklam od recikliranih pamučnih traka,
+                            dok su vrećice sašivene od pažljivo biranih
+                            polovnih materijala.
+                        </p>
+
+                        <p>
+                            Materijale pronalazim u second hand prodavnicama,
+                            na buvljacima, kroz donacije, a nekad i u svom ormaru.
+                            Važno mi je da ne kupujem nove materijale, jer verujem
+                            da već postoji dovoljno kvalitetnog tekstila koji
+                            zaslužuje drugu šansu.
+                        </p>
+
+                        <p>
+                            Trudim se da biram prirodne materijale kad god je to
+                            moguće. Međutim, pošto kod polovnih tkanina etiketa
+                            često nedostaje, ne mogu uvek sa sigurnošću da
+                            garantujem njihov sastav.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>Kako održavati torbu?</span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            Heklani deo torbe prati isključivo ručno, a zatim ga
+                            sušiti prirodnim putem na ravnoj površini kako bi
+                            zadržao svoj oblik.
+                        </p>
+
+                        <p>
+                            Vrećicu preporučujem prati ručno ili na programu
+                            do 30°C.
+                        </p>
+
+                        <p>
+                            Pažljivo održavanje pomoći će da torba i vrećica
+                            duuuuuuugo zadrže svoj izgled.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="site-footer">
+
+        <div class="footer-top">
+
+            <img
+                src="images/logo/krosh-logo.svg"
+                alt="KROSH"
+                class="footer-logo"
+            >
+
+            <a
+                href="https://www.instagram.com/krosh.rs/"
+                class="footer-instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <img
+                    src="images/ui/instagram.svg"
+                    alt=""
+                    class="instagram-icon"
+                >
+
+                <span>@krosh.rs</span>
+            </a>
+
+        </div>
+
+        <p class="footer-tagline">
+            spoooooro pravljeno u beogradu
+        </p>
+
+        <p class="footer-copyright">
+            © 2026 KROSH
+        </p>
+
+    </footer>
+
+
+    <script src="js/data.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
