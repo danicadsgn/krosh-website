@@ -6,19 +6,17 @@ const combinationImage = document.querySelector("#combination-image");
 let selectedBag = "pink";
 let selectedPouch = "fruit";
 
+// preload svih kombinacija
+for (const bag of bags) {
+  for (const pouch of pouches) {
+    const img = new Image();
+    img.src = `images/combinations/bag-${bag.id}_pouch-${pouch.id}.webp`;
+  }
+}
+
 function updateCombinationImage() {
-  const newImagePath =
+  combinationImage.src =
     `images/combinations/bag-${selectedBag}_pouch-${selectedPouch}.webp`;
-
-  combinationImage.classList.add("is-changing");
-
-  setTimeout(() => {
-    combinationImage.src = newImagePath;
-  }, 100);
-
-  combinationImage.onload = () => {
-    combinationImage.classList.remove("is-changing");
-  };
 }
 
 function renderBagOptions() {
@@ -37,18 +35,18 @@ function renderBagOptions() {
     }
 
     button.addEventListener("click", () => {
-  selectedBag = bag.id;
-  selectedBagLabel.textContent = bag.label;
+      selectedBag = bag.id;
+      selectedBagLabel.textContent = bag.label;
 
-  renderBagOptions();
+      renderBagOptions();
 
-  const selectedButton =
-    bagOptionsContainer.querySelector(".color-option.selected");
+      const selectedButton =
+        bagOptionsContainer.querySelector(".color-option.selected");
 
-  selectedButton.classList.add("pop");
+      selectedButton.classList.add("pop");
 
-  updateCombinationImage();
-});
+      updateCombinationImage();
+    });
 
     bagOptionsContainer.appendChild(button);
   });
@@ -75,17 +73,18 @@ function renderPouchOptions() {
     button.appendChild(image);
 
     button.addEventListener("click", () => {
-  selectedPouch = pouch.id;
+      selectedPouch = pouch.id;
 
-  renderPouchOptions();
+      renderPouchOptions();
 
-  const selectedButton =
-    pouchOptionsContainer.querySelector(".pouch-option.selected");
+      const selectedButton =
+        pouchOptionsContainer.querySelector(".pouch-option.selected");
 
-  selectedButton.classList.add("pop");
+      selectedButton.classList.add("pop");
 
-  updateCombinationImage();
-});
+      updateCombinationImage();
+    });
+
     pouchOptionsContainer.appendChild(button);
   });
 }
@@ -112,6 +111,7 @@ function setupFade(wrapperSelector, rowSelector) {
 
   updateFade();
 }
+
 setupFade("#bag-wrapper", "#bag-options");
 setupFade("#pouch-wrapper", "#pouch-options");
 
