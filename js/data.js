@@ -6,7 +6,7 @@ const bags = [
   { id: "lightolive", color: "#58816E", label: "Olive" },
   { id: "babypink", color: "#EFAFC6", label: "Baby Pink" },
   { id: "darkblue", color: "#0043C0", label: "Royal Blue" },
-  { id: "yellow", color: "#E4DAA7", label: "Butter" },
+  { id: "yellow", color: "#fff3b9", label: "Butter" },
   { id: "darkgreen", color: "#0C463A", label: "Forest" },
   { id: "red", color: "#D71331", label: "Red" },
   { id: "black", color: "#0F0F0F", label: "Black" },
