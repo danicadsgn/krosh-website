@@ -3,8 +3,8 @@ const selectedBagLabel = document.querySelector("#selected-bag-label");
 const pouchOptionsContainer = document.querySelector("#pouch-options");
 const combinationImage = document.querySelector("#combination-image");
 
-let selectedBag = "pink";
-let selectedPouch = "fruit";
+let selectedBag = "red";
+let selectedPouch = "bluefloral";
 
 // preload svih kombinacija
 for (const bag of bags) {
