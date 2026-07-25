@@ -520,6 +520,165 @@ button {
 }
 
 /* =========================
+   LIFESTYLE
+========================= */
+
+.lifestyle {
+    margin-top: 56px;
+}
+
+.lifestyle h2 {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.lifestyle-gallery {
+    display: flex;
+    gap: 6px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    margin-left: -16px;
+    margin-right: -16px;
+    padding: 0 16px 8px;
+
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.lifestyle-gallery::-webkit-scrollbar {
+    display: none;
+}
+
+.lifestyle-gallery img {
+    flex: 0 0 45%;
+    width: 45%;
+    max-width: 45%;
+
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+
+    border-radius: 0px;
+    display: block;
+}
+
+.lifestyle-gallery {
+    cursor: grab;
+}
+
+.lifestyle-gallery.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+.lifestyle-gallery.dragging img {
+    pointer-events: none;
+}
+
+.lifestyle-gallery:active {
+    cursor: grabbing;
+}
+
+.lifestyle-title {
+    display: block;
+    height: 48px;
+    width: auto;
+    margin-bottom: 10px;
+}
+
+.lifestyle-arrow {
+    display: none;
+}
+
+@media (min-width: 992px) {
+
+    .lifestyle-gallery-wrapper {
+        position: relative;
+    }
+
+    .lifestyle-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 44px;
+        height: 44px;
+
+        padding: 0;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.88);
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+
+        color: #111;
+        font-family: Arial, sans-serif;
+        font-size: 0;
+
+        cursor: pointer;
+        z-index: 2;
+
+        opacity: 1;
+        visibility: visible;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    .lifestyle-arrow.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .lifestyle-arrow::before {
+        content: "";
+        width: 9px;
+        height: 9px;
+        border-top: 1.5px solid currentColor;
+        border-right: 1.5px solid currentColor;
+    }
+
+    .lifestyle-arrow-right {
+        right: 16px;
+    }
+
+    .lifestyle-arrow-right::before {
+        transform: rotate(45deg);
+        margin-left: -3px;
+    }
+
+    .lifestyle-arrow-left {
+        left: 16px;
+    }
+
+    .lifestyle-arrow-left::before {
+        transform: rotate(-135deg);
+        margin-left: 3px;
+    }
+
+    .lifestyle-arrow:hover {
+        background: #ffffff;
+        transform: translateY(-50%) scale(1.05);
+    }
+}
+
+
+/* =========================
    DESKTOP
 ========================= */
 
@@ -676,5 +835,74 @@ button {
 
     .faq {
         margin-top: 48px;
+    }
+}
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.82);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .25s ease,
+        visibility .25s ease;
+
+    z-index: 9999;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox img {
+    width: min(92vw, 520px);
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    transform: scale(.95);
+    transition: transform .25s ease;
+}
+
+.lightbox.active img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    width: 44px;
+    height: 44px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.15);
+    color: white;
+
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+    .lightbox {
+        display: none;
     }
 }

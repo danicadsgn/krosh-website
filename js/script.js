@@ -145,3 +145,120 @@ function trackInstagramClick() {
         event_label: 'Rezervisi svoju kombinaciju'
     });
 }
+
+const lifestyleGallery = document.querySelector(".lifestyle-gallery");
+const leftArrow = document.querySelector(".lifestyle-arrow-left");
+const rightArrow = document.querySelector(".lifestyle-arrow-right");
+
+if (lifestyleGallery && leftArrow && rightArrow) {
+
+    function updateArrows() {
+        const atStart = lifestyleGallery.scrollLeft <= 2;
+        const atEnd =
+            lifestyleGallery.scrollLeft + lifestyleGallery.clientWidth >=
+            lifestyleGallery.scrollWidth - 2;
+
+        leftArrow.classList.toggle("hidden", atStart);
+        rightArrow.classList.toggle("hidden", atEnd);
+    }
+
+    function getStep() {
+        const firstImage = lifestyleGallery.querySelector("img");
+
+        if (!firstImage) return 0;
+
+        return firstImage.getBoundingClientRect().width + 6;
+    }
+
+    rightArrow.addEventListener("click", () => {
+        lifestyleGallery.scrollBy({
+            left: getStep(),
+            behavior: "smooth"
+        });
+    });
+
+    leftArrow.addEventListener("click", () => {
+        lifestyleGallery.scrollBy({
+            left: -getStep(),
+            behavior: "smooth"
+        });
+    });
+
+    let isDragging = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+
+    lifestyleGallery.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        lifestyleGallery.classList.add("dragging");
+
+        startX = e.pageX;
+        startScrollLeft = lifestyleGallery.scrollLeft;
+    });
+
+    window.addEventListener("mouseup", () => {
+        isDragging = false;
+        lifestyleGallery.classList.remove("dragging");
+    });
+
+    lifestyleGallery.addEventListener("mouseleave", () => {
+        isDragging = false;
+        lifestyleGallery.classList.remove("dragging");
+    });
+
+    lifestyleGallery.addEventListener("mousemove", (e) => {
+        if (!isDragging) return;
+
+        e.preventDefault();
+
+        const walk = e.pageX - startX;
+        lifestyleGallery.scrollLeft = startScrollLeft - walk;
+    });
+
+    lifestyleGallery.addEventListener("dragstart", (e) => {
+        e.preventDefault();
+    });
+
+    lifestyleGallery.addEventListener("scroll", updateArrows);
+
+    updateArrows();
+}
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-image");
+const lightboxClose = document.querySelector(".lightbox-close");
+
+if (lightbox && lightboxImage) {
+
+    const lifestyleImages = document.querySelectorAll(".lifestyle-gallery img");
+
+    lifestyleImages.forEach((image) => {
+
+        image.addEventListener("click", () => {
+
+            if (window.innerWidth >= 992) return;
+
+            lightboxImage.src = image.src;
+            lightboxImage.alt = image.alt;
+
+            lightbox.classList.add("active");
+
+            document.body.style.overflow = "hidden";
+        });
+
+    });
+
+    function closeLightbox() {
+        lightbox.classList.remove("active");
+        document.body.style.overflow = "";
+    }
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+}
