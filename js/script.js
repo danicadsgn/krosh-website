@@ -138,3 +138,10 @@ faqItems.forEach((item) => {
 
   question.setAttribute("aria-expanded", "false");
 });
+
+function trackInstagramClick() {
+    gtag('event', 'instagram_click', {
+        event_category: 'engagement',
+        event_label: 'Rezervisi svoju kombinaciju'
+    });
+}
