@@ -188,6 +188,7 @@ button {
 
 .color-option,
 .pouch-option {
+    position: relative;
     flex: 0 0 48px;
     width: 48px;
     height: 48px;
@@ -836,4 +837,26 @@ button {
     .faq {
         margin-top: 48px;
     }
+}
+
+
+.sold-label {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: inherit;
+    background: rgba(255, 255, 255, 0.68);
+    color: #777;
+
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    pointer-events: none;
+    z-index: 5;
 }
