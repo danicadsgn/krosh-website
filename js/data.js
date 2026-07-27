@@ -16,7 +16,7 @@ const bags = [
 
 const pouches = [
   { id: "bluefloral", image: "images/pouches/bluefloral.webp", soldOut: false },
-  { id: "blueplaid", image: "images/pouches/blueplaid.webp", soldOut: false },
+  { id: "blueplaid", image: "images/pouches/blueplaid.webp", soldOut: true },
   { id: "fruit", image: "images/pouches/fruit.webp", soldOut: true },
   { id: "pinkplaid", image: "images/pouches/pinkplaid.webp", soldOut: true },
   { id: "pinkstripes", image: "images/pouches/pinkstripes.webp", soldOut: false },
@@ -27,5 +27,5 @@ const pouches = [
   { id: "thinpink", image: "images/pouches/thinpink.webp", soldOut: false },
   { id: "yellow", image: "images/pouches/yellow.webp", soldOut: true },
   { id: "garden", image: "images/pouches/garden.webp", soldOut: true },
-  { id: "corduroy", image: "images/pouches/corduroy.webp", soldOut: false }
+  { id: "corduroy", image: "images/pouches/corduroy.webp", soldOut: true }
 ];
