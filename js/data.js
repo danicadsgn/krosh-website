@@ -10,7 +10,7 @@ const bags = [
   { id: "darkgreen", color: "#0C463A", label: "Forest", soldOut: false },
   { id: "red", color: "#D71331", label: "Red", soldOut: false },
   { id: "black", color: "#0F0F0F", label: "Black", soldOut: false },
-  { id: "beige", color: "#E9E1CB", label: "Beige", soldOut: false },
+  { id: "beige", color: "#E9E1CB", label: "Beige", soldOut: true },
   { id: "darkolive", color: "#3D462C", label: "Moss", soldOut: true }
 ];
 
@@ -20,9 +20,9 @@ const pouches = [
   { id: "fruit", image: "images/pouches/fruit.webp", soldOut: true },
   { id: "pinkplaid", image: "images/pouches/pinkplaid.webp", soldOut: true },
   { id: "pinkstripes", image: "images/pouches/pinkstripes.webp", soldOut: false },
-  { id: "purple", image: "images/pouches/purple.webp", soldOut: false },
+  { id: "purple", image: "images/pouches/purple.webp", soldOut: true },
   { id: "redcheck", image: "images/pouches/redcheck.webp", soldOut: false },
-  { id: "redplaid", image: "images/pouches/redplaid.webp", soldOut: false },
+  { id: "redplaid", image: "images/pouches/redplaid.webp", soldOut: true },
   { id: "softpink", image: "images/pouches/softpink.webp", soldOut: false },
   { id: "thinpink", image: "images/pouches/thinpink.webp", soldOut: false },
   { id: "yellow", image: "images/pouches/yellow.webp", soldOut: true },
