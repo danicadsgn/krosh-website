@@ -7,7 +7,7 @@ const bags = [
   { id: "babypink", color: "#EFAFC6", label: "Baby Pink", soldOut: false },
   { id: "darkblue", color: "#0043C0", label: "Royal Blue", soldOut: false },
   { id: "yellow", color: "#fff3b9", label: "Butter", soldOut: true },
-  { id: "darkgreen", color: "#0C463A", label: "Forest", soldOut: false },
+  { id: "darkgreen", color: "#0C463A", label: "Forest", soldOut: true },
   { id: "red", color: "#D71331", label: "Red", soldOut: false },
   { id: "black", color: "#0F0F0F", label: "Black", soldOut: false },
   { id: "beige", color: "#E9E1CB", label: "Beige", soldOut: true },
