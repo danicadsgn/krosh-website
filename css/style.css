@@ -1280,3 +1280,12 @@ button.primary:hover {
         padding-right: 0 !important;
     }
 }
+
+@media (max-width: 767px) {
+    .sold-out-hero {
+        width: calc(100% + 32px);
+        margin-left: -16px;
+        margin-right: -16px;
+        max-width: none;
+    }
+}
