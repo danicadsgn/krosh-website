@@ -886,7 +886,7 @@ button {
     max-width: 700px;
     margin: 28px auto 0;
     text-align: center;
-    padding: 0 16px;
+    padding: 0;
 }
 
 .sold-out-content h1 {
@@ -1246,5 +1246,37 @@ button.primary:hover {
 
     #mlb2-44241246 .horizontal-fields {
         padding: 0 !important;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .sold-out-content {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    .sold-out-newsletter {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    #mlb2-44241246.ml-form-embedContainer,
+    #mlb2-44241246 .ml-form-align-center,
+    #mlb2-44241246 .ml-form-embedWrapper,
+    #mlb2-44241246 .ml-form-embedBody,
+    #mlb2-44241246 .ml-form-successBody,
+    #mlb2-44241246 .ml-form-formContent,
+    #mlb2-44241246 .ml-form-horizontalRow,
+    #mlb2-44241246 .ml-input-horizontal,
+    #mlb2-44241246 .horizontal-fields {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
