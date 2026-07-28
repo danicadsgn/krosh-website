@@ -21,7 +21,7 @@ const pouches = [
   { id: "pinkplaid", image: "images/pouches/pinkplaid.webp", soldOut: true },
   { id: "pinkstripes", image: "images/pouches/pinkstripes.webp", soldOut: false },
   { id: "purple", image: "images/pouches/purple.webp", soldOut: true },
-  { id: "redcheck", image: "images/pouches/redcheck.webp", soldOut: false },
+  { id: "redcheck", image: "images/pouches/redcheck.webp", soldOut: true },
   { id: "redplaid", image: "images/pouches/redplaid.webp", soldOut: true },
   { id: "softpink", image: "images/pouches/softpink.webp", soldOut: false },
   { id: "thinpink", image: "images/pouches/thinpink.webp", soldOut: false },
