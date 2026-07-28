@@ -1231,3 +1231,20 @@ button.primary:hover {
         height: 48px !important;
     }
 }
+
+@media (max-width: 767px) {
+
+    #mlb2-44241246 .ml-form-embedBody,
+    #mlb2-44241246 .ml-form-embedWrapper,
+    #mlb2-44241246 .ml-form-formContent,
+    #mlb2-44241246 .ml-form-horizontalRow {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    #mlb2-44241246 .horizontal-fields {
+        padding: 0 !important;
+    }
+}
