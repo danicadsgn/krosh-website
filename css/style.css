@@ -30,7 +30,7 @@ button {
     width: 100%;
     max-width: 430px;
     margin: 0 auto;
-    padding: 56px 16px 48px;
+    padding: 32px 16px 48px;
 }
 
 
@@ -39,13 +39,13 @@ button {
 ========================= */
 
 .intro {
-    margin-bottom: 52px;
+    margin-bottom: 32px;
 }
 
 .logo {
     display: flex;
     justify-content: center;
-    margin-bottom: 42px;
+    margin-bottom: 28px;
 }
 
 .logo img {
