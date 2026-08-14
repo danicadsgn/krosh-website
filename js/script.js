@@ -246,12 +246,13 @@ if (lifestyleGallery && leftArrow && rightArrow) {
     });
 
     let isDragging = false;
+    let hasDragged = false;
     let startX = 0;
     let startScrollLeft = 0;
 
     lifestyleGallery.addEventListener("mousedown", (e) => {
         isDragging = true;
-        lifestyleGallery.classList.add("dragging");
+        hasDragged = false;
 
         startX = e.pageX;
         startScrollLeft = lifestyleGallery.scrollLeft;
@@ -270,11 +271,27 @@ if (lifestyleGallery && leftArrow && rightArrow) {
     lifestyleGallery.addEventListener("mousemove", (e) => {
         if (!isDragging) return;
 
+        const walk = e.pageX - startX;
+
+        if (!hasDragged && Math.abs(walk) > 5) {
+            hasDragged = true;
+            lifestyleGallery.classList.add("dragging");
+        }
+
+        if (!hasDragged) return;
+
         e.preventDefault();
 
-        const walk = e.pageX - startX;
         lifestyleGallery.scrollLeft = startScrollLeft - walk;
     });
+
+    lifestyleGallery.addEventListener("click", (e) => {
+        if (hasDragged) {
+            e.stopPropagation();
+            e.preventDefault();
+            hasDragged = false;
+        }
+    }, true);
 
     lifestyleGallery.addEventListener("dragstart", (e) => {
         e.preventDefault();
@@ -286,40 +303,75 @@ if (lifestyleGallery && leftArrow && rightArrow) {
 }
 
 const lightbox = document.getElementById("lightbox");
-const lightboxImage = document.getElementById("lightbox-image");
+const lightboxTrack = document.getElementById("lightbox-track");
 const lightboxClose = document.querySelector(".lightbox-close");
 
-if (lightbox && lightboxImage) {
+if (lightbox && lightboxTrack) {
 
     const lifestyleImages = document.querySelectorAll(".lifestyle-gallery img");
+    const lightboxImages = lightboxTrack.querySelectorAll("img");
 
-    lifestyleImages.forEach((image) => {
+    function openLightbox(index) {
+        lightbox.classList.add("active");
+        lightbox.setAttribute("aria-hidden", "false");
+
+        document.body.style.overflow = "hidden";
+
+        const target = lightboxImages[index];
+
+        if (target) {
+            lightboxTrack.scrollLeft = target.offsetLeft;
+        }
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+
+        document.body.style.overflow = "";
+    }
+
+    lifestyleImages.forEach((image, index) => {
 
         image.addEventListener("click", () => {
 
             if (window.innerWidth >= 992) return;
 
-            lightboxImage.src = image.src;
-            lightboxImage.alt = image.alt;
-
-            lightbox.classList.add("active");
-
-            document.body.style.overflow = "hidden";
+            openLightbox(index);
         });
 
     });
 
-    function closeLightbox() {
-        lightbox.classList.remove("active");
-        document.body.style.overflow = "";
-    }
-
     lightboxClose.addEventListener("click", closeLightbox);
 
-    lightbox.addEventListener("click", (e) => {
-        if (e.target === lightbox) {
-            closeLightbox();
-        }
+    lightboxTrack.addEventListener("click", closeLightbox);
+
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeLightbox();
     });
 
+}
+
+const menuButton = document.querySelector(".menu-button");
+const menuClose = document.querySelector(".menu-close");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+if (menuButton && menuClose && mobileMenu) {
+
+    function openMenu() {
+        mobileMenu.classList.add("is-open");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        menuButton.setAttribute("aria-expanded", "true");
+        document.body.classList.add("menu-open");
+    }
+
+    function closeMenu() {
+        mobileMenu.classList.remove("is-open");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        menuButton.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+    }
+
+    menuButton.addEventListener("click", openMenu);
+    menuClose.addEventListener("click", closeMenu);
 }

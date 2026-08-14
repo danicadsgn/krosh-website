@@ -8,13 +8,27 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body {
     margin: 0;
+    min-height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
     background: #ffffff;
     color: #181818;
     font-family: "Roboto Mono", monospace;
+}
+
+body > main {
+    flex: 1 0 auto;
+}
+
+body > footer {
+    flex-shrink: 0;
 }
 
 button {
@@ -30,7 +44,7 @@ button {
     width: 100%;
     max-width: 430px;
     margin: 0 auto;
-    padding: 56px 16px 48px;
+    padding: 32px 16px 48px;
 }
 
 
@@ -42,16 +56,49 @@ button {
     margin-bottom: 52px;
 }
 
-.logo {
+/* =========================
+   SITE HEADER
+========================= */
+
+.site-header {
     display: flex;
-    justify-content: center;
-    margin-bottom: 42px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
 }
 
-.logo img {
+.site-logo {
     display: block;
-    width: 120px;
+    line-height: 0;
+}
+
+.site-logo img {
+    display: block;
+    width: 82px;
     height: auto;
+}
+
+.menu-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    width: 34px;
+    height: 32px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.menu-button span {
+    display: block;
+    width: 18px;
+    height: 1px;
+    background: #181818;
 }
 
 .description {
@@ -290,7 +337,7 @@ button {
 
     border: none;
     border-radius: 4px;
-    background: #ff7db4;
+    background: ##FF87BA;
     color: #ffffff;
 
     font: inherit;
@@ -678,12 +725,160 @@ button {
     }
 }
 
+/* =========================
+   LIGHTBOX
+========================= */
+
+.lightbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+
+    background: rgba(10, 10, 10, 0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition:
+        opacity 0.35s ease,
+        background 0.35s ease,
+        backdrop-filter 0.35s ease;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+
+    background: rgba(10, 10, 10, 0.82);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.lightbox-track {
+    display: flex;
+
+    width: 100%;
+    height: 100dvh;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.lightbox-track::-webkit-scrollbar {
+    display: none;
+}
+
+.lightbox-track img {
+    display: block;
+
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    scroll-snap-align: center;
+
+    transform: scale(0.9);
+    transition: transform 0.35s ease;
+}
+
+.lightbox.active .lightbox-track img {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 24px;
+    right: 20px;
+    z-index: 10001;
+
+    width: 34px;
+    height: 32px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.lightbox-close span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 21px;
+    height: 1px;
+
+    background: #ffffff;
+}
+
+.lightbox-close span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.lightbox-close span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.desktop-nav {
+    display: none;
+}
 
 /* =========================
    DESKTOP
 ========================= */
 
 @media (min-width: 900px) {
+
+    .site-header {
+    width: 100%;
+    margin-bottom: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-button {
+    display: none;
+}
+
+.desktop-nav {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-left: auto;
+}
+
+.desktop-nav-link {
+    color: #181818;
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+
+    transition: color 0.2s ease;
+}
+
+.desktop-nav-link:hover {
+    color: #FF87BA;
+}
+
+.desktop-nav-link.active {
+    color: #FF87BA;
+}
 
     .page {
         width: 100%;
@@ -700,13 +895,14 @@ button {
 
     .intro {
         width: 100%;
-        max-width: 620px;
+        max-width: none;
         margin-bottom: 64px;
     }
 
     .description {
     font-size: 14px;
     line-height: 1.55;
+    max-width: 620px;
     }
 
     .selection-header h2 {
@@ -837,7 +1033,12 @@ button {
     .faq {
         margin-top: 48px;
     }
+    
 }
+
+ .scarves-controls {
+    padding: 24px 16px 0;
+ }
 
 
 .sold-label {
@@ -1289,3 +1490,1723 @@ button.primary:hover {
         max-width: none;
     }
 }
+
+/* =========================
+   SCARVES PAGE
+========================= */
+
+.scarves-page {
+    width: 100%;
+    padding: 32px 0 48px;
+}
+
+.scarves-intro {
+    padding: 0 16px;
+    margin-bottom: 32px;
+}
+
+.scarves-intro .logo {
+    margin-bottom: 28px;
+}
+
+.scarves-description {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.scarves-description.secondary {
+    margin-top: 10px;
+}
+
+
+/* =========================
+   SCARVES GALLERY
+========================= */
+
+.scarves-gallery {
+    width: 100%;
+    overflow: hidden;
+}
+
+.scarves-gallery-track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+.scarves-gallery-track::before,
+.scarves-gallery-track::after {
+    content: "";
+    flex: 0 0 8px;
+}
+
+.scarves-gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+.scarves-gallery-track img {
+    flex: 0 0 calc(100% - 48px);
+    width: calc(100% - 48px);
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+    scroll-snap-align: center;
+}
+/* =========================
+   SCARF CONFIGURATOR
+========================= */
+
+.scarves-configurator {
+    padding: 24px 16px 0;
+}
+
+.scarves-label {
+    margin: 0 0 14px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.scarves-model-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px 8px;
+}
+
+.scarf-model {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+.scarf-model img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.scarf-model.is-selected {
+    opacity: 0.55;
+}
+
+/* =========================
+   SCARF COLORS
+========================= */
+
+.scarves-colors {
+    margin-top: 28px;
+}
+
+.scarves-colors-wrapper {
+    position: relative;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.scarves-color-options {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+
+    padding: 8px 16px 12px;
+
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.scarves-color-options::-webkit-scrollbar {
+    display: none;
+}
+
+.scarves-colors-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 20px;
+    height: 100%;
+
+    pointer-events: none;
+    opacity: 0.45;
+
+    background: linear-gradient(
+        to left,
+        #ffffff,
+        rgba(255, 255, 255, 0)
+    );
+
+    transition: opacity 0.25s ease;
+}
+
+.scarves-colors-wrapper.at-end::after {
+    opacity: 0;
+}
+
+.scarves-color-options {
+    cursor: grab;
+}
+
+.scarves-color-options.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+.scarves-color-options.dragging .scarf-color {
+    pointer-events: none;
+}
+
+.scarf-color {
+    position: relative;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color);
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.scarf-color:hover {
+    transform: scale(1.05);
+}
+
+.scarf-color:active {
+    transform: scale(0.94);
+}
+
+.scarf-color.is-selected {
+    box-shadow:
+        0 0 0 2px #ffffff,
+        0 0 0 4px #a09f9f;
+}
+
+.scarf-color:focus-visible {
+    outline: none;
+}
+
+.scarves-color-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 6px;
+}
+
+.scarves-color-header .scarves-label {
+    margin: 0;
+}
+
+.selected-color-name {
+    margin: 0;
+    min-height: 0;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #666666;
+}
+
+/* =========================
+   SCARF TIE LENGTH
+========================= */
+
+.scarves-ties {
+    margin-top: 24px;
+}
+
+.scarves-tie-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.scarf-tie {
+    min-height: 64px;
+    padding: 10px 8px;
+
+    border: 1px solid #dddddd;
+    border-radius: 3px;
+    background: #ffffff;
+
+    font-family: inherit;
+    color: #181818;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.scarf-tie strong {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.scarf-tie span {
+    font-size: 10px;
+    font-weight: 400;
+    color: #666666;
+}
+
+.scarf-tie:active {
+    transform: scale(0.98);
+}
+
+.scarf-tie.is-selected {
+    border-color: #a09f9f;
+    box-shadow: 0 0 0 1px #a09f9f;
+}
+
+.scarf-tie:focus-visible {
+    outline: none;
+}
+
+/* =========================
+   SCARF ORDER
+========================= */
+
+.scarves-order {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.scarves-selection-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.scarves-selection-summary {
+    min-height: 18px;
+    margin: 0;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.scarves-price {
+    flex-shrink: 0;
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.scarves-order-button {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 16px;
+
+    border: 0;
+    border-radius: 3px;
+
+    background: #ff7db4;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.scarves-order-button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.scarves-order-button:not(:disabled):active {
+    transform: scale(0.98);
+}
+
+.scarves-order-note {
+    max-width: 340px;
+    margin: 10px auto 0;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #7d7d7d;
+}
+
+/* =========================
+   SCARVES FAQ
+========================= */
+
+.scarves-page .faq {
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    width: 100%;
+    height: 100dvh;
+
+    padding: 32px 16px 40px;
+
+    background: #ffffff;
+
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+
+    box-sizing: border-box;
+}
+
+.mobile-menu.is-open {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mobile-menu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 24px;
+    margin-top: 64px;
+}
+
+.mobile-menu-link {
+    position: relative;
+
+    color: #181818;
+    text-decoration: none;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.mobile-menu-link.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: calc(100vw - 32px);
+    height: 2px;
+
+    background: #FF87BA;
+}
+
+.mobile-menu-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 14px;
+}
+
+.mobile-menu-sublink {
+    position: relative;
+    margin-left: 20px;
+
+    color: #666666;
+    text-decoration: none;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.mobile-menu-sublink.active {
+    color: #181818;
+}
+
+.mobile-menu-sublink.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+
+    width: calc(100vw - 52px);
+    height: 2px;
+
+    background: #FF87BA;
+}
+
+.menu-close {
+    position: relative;
+
+    width: 34px;
+    height: 32px;
+    padding: 0;
+
+    border: 0;
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.menu-close span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: 21px;
+    height: 1px;
+
+    background: #181818;
+}
+
+.menu-close span:first-child {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-close span:last-child {
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+body.menu-open {
+    overflow: hidden;
+}
+
+.scarves-gallery-arrow {
+    display: none;
+}
+
+/* =========================
+   SCARVES — DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+
+    .scarves-page {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 44px clamp(48px, 8vw, 140px) 48px;
+        box-sizing: border-box;
+    }
+
+    .scarves-intro {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .scarves-description {
+    max-width: 620px;
+    }
+
+    .scarves-page .faq {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+
+    /* =========================
+       TWO-COLUMN LAYOUT
+    ========================= */
+
+    .scarves-layout {
+        display: grid;
+        grid-template-columns:
+            minmax(0, 0.9fr)
+            minmax(0, 1.1fr);
+
+        gap: 56px;
+        align-items: stretch;
+    }
+
+    .scarves-controls {
+        grid-column: 1;
+        grid-row: 1;
+
+        min-width: 0;
+        padding: 6px 0 0;
+    }
+
+    .scarves-preview {
+        grid-column: 2;
+        grid-row: 1;
+
+        position: relative;
+        min-width: 0;
+        min-height: 0;
+    }
+
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .scarves-gallery {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+    .scarves-gallery-wrapper {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+    .scarves-gallery-track {
+        display: flex;
+        gap: 12px;
+
+        width: 100%;
+        height: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: none;
+        scrollbar-width: none;
+
+        cursor: grab;
+    }
+
+    .scarves-gallery-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .scarves-gallery-track::before,
+    .scarves-gallery-track::after {
+        display: none;
+    }
+
+    .scarves-gallery-track img {
+        display: block;
+
+        flex: 0 0 72%;
+        width: 72%;
+        max-width: 72%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .scarves-gallery-track.dragging {
+        cursor: grabbing;
+        user-select: none;
+    }
+
+    .scarves-gallery-track.dragging img {
+        pointer-events: none;
+    }
+
+
+    /* =========================
+       MODELS
+    ========================= */
+
+    .scarves-model-options {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px 10px;
+        align-items: end;
+    }
+
+    .scarf-model {
+        width: 100%;
+    }
+
+    .scarf-model img {
+        display: block;
+        width: 100%;
+        max-width: 140px;
+        margin: 0 auto;
+    }
+
+
+    /* =========================
+       GALLERY ARROWS
+    ========================= */
+
+    .scarves-gallery-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 44px;
+        height: 44px;
+        padding: 0;
+
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.88);
+
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+
+        color: #111;
+        font-size: 0;
+
+        cursor: pointer;
+        z-index: 2;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    .scarves-gallery-arrow.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .scarves-gallery-arrow::before {
+        content: "";
+
+        width: 9px;
+        height: 9px;
+
+        border-top: 1.5px solid currentColor;
+        border-right: 1.5px solid currentColor;
+    }
+
+    .scarves-gallery-arrow-right {
+        right: 16px;
+    }
+
+    .scarves-gallery-arrow-right::before {
+        transform: rotate(45deg);
+        margin-left: -3px;
+    }
+
+    .scarves-gallery-arrow-left {
+        left: 16px;
+    }
+
+    .scarves-gallery-arrow-left::before {
+        transform: rotate(-135deg);
+        margin-left: 3px;
+    }
+
+    .scarves-gallery-arrow:hover {
+        background: #ffffff;
+        transform: translateY(-50%) scale(1.05);
+    }
+
+    /* =========================
+   ORDER NOTE — DESKTOP
+========================= */
+
+.scarves-order-note {
+    width: 100%;
+    max-width: none;
+    box-sizing: border-box;
+
+    margin: 10px 0 0;
+    padding: 0;
+
+    text-align: center;
+}
+
+/* =========================
+   TYPOGRAPHY — DESKTOP
+========================= */
+
+.scarves-description {
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.scarves-label {
+    font-size: 14px;
+}
+
+.selected-color-name {
+    font-size: 14px;
+}
+
+.scarf-tie strong {
+    font-size: 13px;
+}
+
+.scarf-tie span {
+    font-size: 11px;
+}
+
+.scarves-selection-summary,
+.scarves-price {
+    font-size: 14px;
+}
+
+.scarves-order-button {
+    font-size: 14px;
+}
+
+.scarves-order-note {
+    font-size: 11px;
+}
+
+.scarves-page .faq-question {
+    font-size: 14px;
+}
+
+.scarves-page .faq-answer p {
+    font-size: 13px;
+}
+}
+
+/* =========================
+   CHARMS PAGE
+========================= */
+
+.charms-page {
+    width: 100%;
+    padding: 32px 0 24px;
+}
+
+.charms-intro {
+    padding: 0 16px;
+    margin-bottom: 32px;
+}
+
+.charms-description {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.charms-description.secondary {
+    margin-top: 10px;
+}
+
+
+/* =========================
+   CHARMS GALLERY
+========================= */
+
+.charms-gallery {
+    width: 100%;
+    overflow: hidden;
+}
+
+.charms-gallery-wrapper {
+    position: relative;
+}
+
+.charms-gallery-track {
+    display: flex;
+    gap: 8px;
+
+    overflow-x: auto;
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.charms-gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+.charms-gallery-track::before,
+.charms-gallery-track::after {
+    content: "";
+    flex: 0 0 8px;
+}
+
+.charms-gallery-track img {
+    display: block;
+
+    flex: 0 0 calc(100% - 48px);
+    width: calc(100% - 48px);
+
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+
+    scroll-snap-align: center;
+}
+
+/* =========================
+   CHARMS COLORS
+========================= */
+
+.charms-colors {
+    margin-top: 12px;
+}
+
+.charms-label {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.charms-colors-wrapper {
+    position: relative;
+    margin-left: -16px;
+    margin-right: -16px;
+}
+
+.charms-color-options {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    overflow-x: auto;
+
+    padding: 8px 16px 12px;
+
+    scroll-padding-left: 16px;
+    scroll-padding-right: 16px;
+
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+
+.charms-color-options::-webkit-scrollbar {
+    display: none;
+}
+
+.charms-colors-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 20px;
+    height: 100%;
+
+    pointer-events: none;
+    opacity: 0.45;
+
+    background: linear-gradient(
+        to left,
+        #ffffff,
+        rgba(255, 255, 255, 0)
+    );
+
+    transition: opacity 0.25s ease;
+}
+
+.charms-colors-wrapper.at-end::after {
+    opacity: 0;
+}
+
+.charms-color-options {
+    cursor: grab;
+}
+
+.charms-color-options.dragging {
+    cursor: grabbing;
+    user-select: none;
+}
+
+.charms-color-options.dragging .charm-color {
+    pointer-events: none;
+}
+
+.charm-color {
+    position: relative;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--color);
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.charm-color:hover {
+    transform: scale(1.05);
+}
+
+.charm-color:active {
+    transform: scale(0.94);
+}
+
+.charm-color.is-selected {
+    box-shadow:
+        0 0 0 2px #ffffff,
+        0 0 0 4px #a09f9f;
+}
+
+.charm-color:focus-visible {
+    outline: none;
+}
+
+.charms-color-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 6px;
+}
+
+.charms-color-header .charms-label {
+    margin: 0;
+}
+
+.selected-charm-color-name {
+    margin: 0;
+    min-height: 0;
+    text-align: right;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #666666;
+}
+
+/* =========================
+   CHARMS ORDER
+========================= */
+
+.charms-order {
+    margin-top: 28px;
+    text-align: center;
+}
+
+.charms-selection-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.charms-selection-summary,
+.charms-price {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.charms-selection-summary {
+    text-align: left;
+}
+
+.charms-price {
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.charms-order-button {
+    width: 100%;
+    min-height: 52px;
+    padding: 12px 16px;
+
+    border: 0;
+    border-radius: 4px;
+
+    background: #FF87BA;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.charms-order-button:disabled {
+    opacity: 0.35;
+    cursor: default;
+}
+
+.charms-order-button:not(:disabled):active {
+    transform: scale(0.98);
+}
+
+.charms-order-note {
+    width: 100%;
+    max-width: none;
+
+    margin: 10px 0 0;
+
+    text-align: center;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #7d7d7d;
+}
+
+/* =========================
+   CHARMS ABOUT
+========================= */
+
+.charms-about {
+    margin-top: 48px;
+    text-align: left;
+}
+
+.charms-about p {
+    margin: 0 0 18px;
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #5f5f5f;
+
+    text-align: justify;
+}
+
+.charms-about p:last-child {
+    margin-bottom: 0;
+}
+
+.charms-controls {
+    padding: 16px 16px 0;
+}
+
+.charms-gallery-arrow {
+    display: none;
+}
+
+/* =========================
+   CHARMS — DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+
+    .charms-page {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 44px clamp(48px, 8vw, 140px) 48px;
+        box-sizing: border-box;
+    }
+
+    .charms-intro {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .charms-description {
+        max-width: 620px;
+    }
+
+
+    /* =========================
+       TWO-COLUMN LAYOUT
+    ========================= */
+
+    .charms-layout {
+        display: grid;
+        grid-template-columns:
+            minmax(0, 0.9fr)
+            minmax(0, 1.1fr);
+
+        gap: 56px;
+        align-items: stretch;
+    }
+
+    .charms-controls {
+        grid-column: 1;
+        grid-row: 1;
+
+        min-width: 0;
+        padding: 6px 0 0;
+    }
+
+    .charms-preview {
+        grid-column: 2;
+        grid-row: 1;
+
+        position: relative;
+        min-width: 0;
+        min-height: 0;
+    }
+
+
+    /* =========================
+       GALLERY
+    ========================= */
+
+    .charms-gallery {
+        position: absolute;
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+    .charms-gallery-wrapper {
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+    .charms-gallery-track {
+        display: flex;
+        gap: 12px;
+
+        width: 100%;
+        height: 100%;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scroll-snap-type: none;
+        scrollbar-width: none;
+
+        cursor: grab;
+    }
+
+    .charms-gallery-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .charms-gallery-track::before,
+    .charms-gallery-track::after {
+        display: none;
+    }
+
+    .charms-gallery-track img {
+        display: block;
+
+        flex: 0 0 72%;
+        width: 72%;
+        max-width: 72%;
+        height: 100%;
+
+        object-fit: cover;
+    }
+
+    .charms-gallery-track.dragging {
+        cursor: grabbing;
+        user-select: none;
+    }
+
+    .charms-gallery-track.dragging img {
+        pointer-events: none;
+    }
+
+
+    /* =========================
+       GALLERY ARROWS
+    ========================= */
+
+    .charms-gallery-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        width: 44px;
+        height: 44px;
+        padding: 0;
+
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 50%;
+
+        background: rgba(255, 255, 255, 0.88);
+
+        backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
+
+        color: #111;
+        font-size: 0;
+
+        cursor: pointer;
+        z-index: 2;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease,
+            opacity 0.25s ease,
+            visibility 0.25s ease;
+    }
+
+    .charms-gallery-arrow.hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .charms-gallery-arrow::before {
+        content: "";
+
+        width: 9px;
+        height: 9px;
+
+        border-top: 1.5px solid currentColor;
+        border-right: 1.5px solid currentColor;
+    }
+
+    .charms-gallery-arrow-right {
+        right: 16px;
+    }
+
+    .charms-gallery-arrow-right::before {
+        transform: rotate(45deg);
+        margin-left: -3px;
+    }
+
+    .charms-gallery-arrow-left {
+        left: 16px;
+    }
+
+    .charms-gallery-arrow-left::before {
+        transform: rotate(-135deg);
+        margin-left: 3px;
+    }
+
+    .charms-gallery-arrow:hover {
+        background: #ffffff;
+        transform: translateY(-50%) scale(1.05);
+    }
+
+
+    /* =========================
+       ORDER NOTE — DESKTOP
+    ========================= */
+
+    .charms-order-note {
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+
+        margin: 10px 0 0;
+        padding: 0;
+
+        text-align: center;
+    }
+
+
+    /* =========================
+       TYPOGRAPHY — DESKTOP
+    ========================= */
+
+    .charms-description {
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .charms-label {
+        font-size: 14px;
+    }
+
+    .selected-charm-color-name {
+        font-size: 14px;
+    }
+
+    .charms-selection-summary,
+    .charms-price {
+        font-size: 14px;
+    }
+
+    .charms-order-button {
+        font-size: 14px;
+    }
+
+    .charms-order-note {
+        font-size: 11px;
+    }
+
+    .charms-about p {
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   BOOKMARKS PAGE
+========================= */
+
+.bookmarks-page {
+    width: 100%;
+    padding: 32px 0 48px;
+}
+
+.bookmarks-intro {
+    padding: 0 16px;
+    margin-bottom: 32px;
+}
+
+.bookmarks-description {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.bookmarks-description + .bookmarks-description {
+    margin-top: 10px;
+}
+
+.bookmarks-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 52px;
+    margin-top: 20px;
+    padding: 12px 16px;
+
+    border: 0;
+    border-radius: 4px;
+
+    background: #FF87BA;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+.bookmarks-cta:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   BOOKMARKS LIST
+========================= */
+
+.bookmarks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 0 16px;
+}
+
+
+/* =========================
+   BOOKMARK CARD
+========================= */
+
+.bookmark-card {
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+.bookmark-card-body {
+    padding: 16px 24px 24px;
+}
+
+.bookmark-card-title {
+    margin: 0;
+
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.bookmark-card-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin-top: 6px;
+}
+
+.bookmark-card-length {
+    font-size: 13px;
+    font-weight: 400;
+    color: #5f5f5f;
+}
+
+.bookmark-card-price {
+    font-size: 13px;
+    font-weight: 600;
+    color: #181818;
+}
+
+
+/* =========================
+   BOOKMARK GALLERY
+========================= */
+
+.bookmark-gallery {
+    width: 100%;
+    overflow: hidden;
+}
+
+.bookmark-gallery img {
+    display: block;
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+
+/* =========================
+   BOOKMARKS — DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+
+    .bookmarks-page {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 44px clamp(48px, 8vw, 140px) 48px;
+        box-sizing: border-box;
+    }
+
+    .bookmarks-intro {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .bookmarks-description {
+        max-width: 620px;
+        font-size: 14px;
+        line-height: 1.55;
+    }
+
+    .bookmarks-cta {
+        display: inline-flex;
+        width: auto;
+        min-width: 200px;
+    }
+
+
+    /* =========================
+       CARD GRID
+    ========================= */
+
+    .bookmarks-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 24px;
+
+        padding: 0;
+    }
+
+
+    /* =========================
+       TYPOGRAPHY
+    ========================= */
+
+    .bookmark-card-title {
+        font-size: 14px;
+    }
+
+    .bookmark-card-length,
+    .bookmark-card-price {
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   AKSESOARI PAGE
+========================= */
+
+.aksesoari-page {
+    width: 100%;
+    padding: 32px 0 48px;
+}
+
+.aksesoari-intro {
+    padding: 0 16px;
+    margin-bottom: 32px;
+}
+
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.aksesoari-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding: 0 16px;
+}
+
+.aksesoari-card {
+    display: block;
+
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    overflow: hidden;
+
+    background: #ffffff;
+    text-decoration: none;
+    color: inherit;
+
+    transition: border-color 0.2s ease;
+}
+
+.aksesoari-card:hover {
+    border-color: #c9c9c9;
+}
+
+.aksesoari-card:active {
+    transform: scale(0.99);
+}
+
+.aksesoari-card-thumb {
+    width: 100%;
+}
+
+.aksesoari-card-thumb img {
+    display: block;
+    width: 100%;
+
+    aspect-ratio: 8 / 5;
+    object-fit: cover;
+}
+
+.aksesoari-card-body {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+
+    padding: 16px 20px;
+}
+
+.aksesoari-card-title {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.aksesoari-card-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 17px;
+
+    width: 17px;
+    height: 17px;
+
+    color: #181818;
+    transform: rotate(-90deg);
+}
+
+.aksesoari-card-arrow svg {
+    display: block;
+    width: 17px;
+    height: 17px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================
+   AKSESOARI — DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+
+    .aksesoari-page {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 44px clamp(48px, 8vw, 140px) 48px;
+        box-sizing: border-box;
+    }
+
+    .aksesoari-intro {
+        width: 100%;
+        max-width: none;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .aksesoari-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+
+        padding: 0;
+    }
+
+    .aksesoari-card-body {
+        padding: 20px 24px;
+    }
+}
+

@@ -109,12 +109,103 @@
 
         <header class="intro">
 
-            <div class="logo">
-                <img
-                    src="images/logo/krosh-logo.svg"
-                    alt="KROSH logo"
-                >
-            </div>
+            <div class="site-header">
+
+    <a href="index.html" class="site-logo">
+        <img
+            src="images/logo/krosh-logo.svg"
+            alt="KROSH logo"
+        >
+    </a>
+
+    <nav class="desktop-nav">
+
+    <a href="#" class="desktop-nav-link">
+        Home
+    </a>
+
+    <a href="index.html" class="desktop-nav-link active">
+        Torbe
+    </a>
+
+    <a href="marame.html" class="desktop-nav-link">
+        Marame
+    </a>
+
+    <a href="aksesoari.html" class="desktop-nav-link">
+        Aksesoari
+    </a>
+
+    </nav>
+
+    <button
+        class="menu-button"
+        type="button"
+        aria-label="Otvori meni"
+        aria-expanded="false"
+    >
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+</div>
+
+<nav class="mobile-menu" aria-hidden="true">
+
+    <div class="mobile-menu-header">
+
+        <a href="index.html" class="site-logo">
+            <img
+                src="images/logo/krosh-logo-pink.svg"
+                alt="KROSH logo"
+            >
+        </a>
+
+        <button
+            class="menu-close"
+            type="button"
+            aria-label="Zatvori meni"
+        >
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+    <div class="mobile-menu-links">
+
+        <a href="#" class="mobile-menu-link">
+            Home
+        </a>
+
+        <a href="index.html" class="mobile-menu-link active">
+            Torbe
+        </a>
+
+        <a href="marame.html" class="mobile-menu-link">
+            Marame
+        </a>
+
+        <div class="mobile-menu-group">
+
+            <a href="aksesoari.html" class="mobile-menu-link">
+                Aksesoari
+            </a>
+
+            <a href="privesci.html" class="mobile-menu-sublink">
+                Privesci
+            </a>
+
+            <a href="bukmarkeri.html" class="mobile-menu-sublink">
+                Bukmarkeri
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
 
             <p class="description">
                 Ručno heklane torbe od
@@ -1216,6 +1307,51 @@
     </div>
 
 </section>
+
+<!-- LIGHTBOX -->
+
+<div class="lightbox" id="lightbox" aria-hidden="true">
+
+    <button
+        class="lightbox-close"
+        type="button"
+        aria-label="Zatvori"
+    >
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="lightbox-track" id="lightbox-track">
+
+        <img
+            src="images/lifestyle/krosh-lifestyle-1.webp"
+            alt="KROSH torba u svakodnevnom nošenju"
+        >
+
+        <img
+            src="images/lifestyle/krosh-lifestyle-2.webp"
+            alt="KROSH torba u svakodnevnom nošenju"
+        >
+
+        <img
+            src="images/lifestyle/krosh-lifestyle-3.webp"
+            alt="KROSH torba u svakodnevnom nošenju"
+        >
+
+        <img
+            src="images/lifestyle/krosh-lifestyle-4.webp"
+            alt="KROSH torba u svakodnevnom nošenju"
+        >
+
+        <img
+            src="images/lifestyle/krosh-lifestyle-5.webp"
+            alt="KROSH torba u svakodnevnom nošenju"
+        >
+
+    </div>
+
+</div>
+
         <!-- FAQ -->
 
         <section class="faq">
