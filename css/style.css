@@ -329,19 +329,25 @@ button {
 
 .configurator-pricing {
     margin: 0 0 16px;
-    text-align: center;
 }
 
-.configurator-pricing p {
-    margin: 0 0 4px;
+.configurator-pricing-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
 
+    margin-bottom: 4px;
+}
+
+.configurator-pricing-row:last-child {
+    margin-bottom: 0;
+}
+
+.configurator-pricing-row span {
     font-size: 13px;
     font-weight: 600;
     color: #181818;
-}
-
-.configurator-pricing p:last-child {
-    margin-bottom: 0;
 }
 
 /* =========================
@@ -934,7 +940,7 @@ button {
     font-size: 14px;
     }
 
-    .configurator-pricing p {
+    .configurator-pricing-row span {
     font-size: 14px;
     }
 
