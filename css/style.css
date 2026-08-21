@@ -327,6 +327,23 @@ button {
 }
 
 
+.configurator-pricing {
+    margin: 0 0 16px;
+    text-align: center;
+}
+
+.configurator-pricing p {
+    margin: 0 0 4px;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: #181818;
+}
+
+.configurator-pricing p:last-child {
+    margin-bottom: 0;
+}
+
 /* =========================
    RESERVE BUTTON
 ========================= */
@@ -914,6 +931,10 @@ button {
     }
 
     .selected-option-label {
+    font-size: 14px;
+    }
+
+    .configurator-pricing p {
     font-size: 14px;
     }
 
