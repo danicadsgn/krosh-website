@@ -6,15 +6,27 @@ const combinationImage = document.querySelector("#combination-image");
 let selectedBag = "red";
 let selectedPouch = "bluefloral";
 
+function getFirstAvailableItem(items) {
+  return items.find((item) => !item.soldOut);
+}
+
 const initialBag = bags.find((bag) => bag.id === selectedBag);
 const initialPouch = pouches.find((pouch) => pouch.id === selectedPouch);
 
-if (!initialBag) {
-  selectedBag = bags[0].id;
+if (!initialBag || initialBag.soldOut) {
+  const firstAvailableBag = getFirstAvailableItem(bags);
+
+  if (firstAvailableBag) {
+    selectedBag = firstAvailableBag.id;
+  }
 }
 
-if (!initialPouch) {
-  selectedPouch = pouches[0].id;
+if (!initialPouch || initialPouch.soldOut) {
+  const firstAvailablePouch = getFirstAvailableItem(pouches);
+
+  if (firstAvailablePouch) {
+    selectedPouch = firstAvailablePouch.id;
+  }
 }
 
 // preload svih kombinacija
@@ -39,7 +51,17 @@ function renderBagOptions() {
     button.type = "button";
     button.classList.add("color-option");
     button.style.backgroundColor = bag.color;
-    button.setAttribute("aria-label", bag.label);
+
+    if (bag.soldOut) {
+      button.classList.add("sold-out");
+      button.setAttribute(
+        "aria-label",
+        `${bag.label} — rasprodato`
+      );
+      button.title = "Rasprodato";
+    } else {
+      button.setAttribute("aria-label", bag.label);
+    }
 
     if (bag.id === selectedBag) {
       button.classList.add("selected");
@@ -62,6 +84,13 @@ function renderBagOptions() {
       updateCombinationImage();
     });
 
+    if (bag.soldOut) {
+      const soldLabel = document.createElement("span");
+      soldLabel.className = "sold-label";
+      soldLabel.textContent = "Sold";
+      button.appendChild(soldLabel);
+    }
+
     bagOptionsContainer.appendChild(button);
   });
 }
@@ -74,6 +103,12 @@ function renderPouchOptions() {
 
     button.type = "button";
     button.classList.add("pouch-option");
+
+    if (pouch.soldOut) {
+      button.classList.add("sold-out");
+      button.setAttribute("aria-label", "Vrećica — rasprodato");
+      button.title = "Rasprodato";
+    }
 
     if (pouch.id === selectedPouch) {
       button.classList.add("selected");
@@ -101,6 +136,13 @@ function renderPouchOptions() {
 
       updateCombinationImage();
     });
+
+    if (pouch.soldOut) {
+      const soldLabel = document.createElement("span");
+      soldLabel.className = "sold-label";
+      soldLabel.textContent = "Sold";
+      button.appendChild(soldLabel);
+    }
 
     pouchOptionsContainer.appendChild(button);
   });
