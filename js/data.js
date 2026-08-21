@@ -28,6 +28,6 @@ const pouches = [
   { id: "cars", image: "images/pouches/cars.webp", soldOut: false },
   { id: "redplaid", image: "images/pouches/redplaid.webp", soldOut: false },
   { id: "beigestripes", image: "images/pouches/beigestripes.webp", soldOut: false },
-  { id: "lines", image: "images/pouches/lines.webp", soldOut: false },
-  { id: "lightblueplaid", image: "images/pouches/lightblueplaid.webp", soldOut: false }
+  { id: "lightblueplaid", image: "images/pouches/lightblueplaid.webp", soldOut: false },
+  { id: "lines", image: "images/pouches/lines.webp", soldOut: false }
 ];
