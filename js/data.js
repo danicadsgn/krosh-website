@@ -15,19 +15,19 @@ const bags = [
 ];
 
 const pouches = [
+  { id: "blueplaid", image: "images/pouches/blueplaid.webp", soldOut: false },
   { id: "pink", image: "images/pouches/pink.webp", soldOut: false },
+  { id: "garden", image: "images/pouches/garden.webp", soldOut: false },
   { id: "bluefloral", image: "images/pouches/bluefloral.webp", soldOut: false },
   { id: "yellow", image: "images/pouches/yellow.webp", soldOut: false },
   { id: "blackwhite", image: "images/pouches/blackwhite.webp", soldOut: false },
   { id: "orangeplaid", image: "images/pouches/orangeplaid.webp", soldOut: false },
-  { id: "lightblueplaid", image: "images/pouches/lightblueplaid.webp", soldOut: false },
   { id: "pastel", image: "images/pouches/pastel.webp", soldOut: false },
   { id: "darkplaid", image: "images/pouches/darkplaid.webp", soldOut: false },
   { id: "silverfloral", image: "images/pouches/silverfloral.webp", soldOut: false },
   { id: "cars", image: "images/pouches/cars.webp", soldOut: false },
   { id: "redplaid", image: "images/pouches/redplaid.webp", soldOut: false },
-  { id: "garden", image: "images/pouches/garden.webp", soldOut: false },
   { id: "beigestripes", image: "images/pouches/beigestripes.webp", soldOut: false },
   { id: "lines", image: "images/pouches/lines.webp", soldOut: false },
-  { id: "blueplaid", image: "images/pouches/blueplaid.webp", soldOut: false }
+  { id: "lightblueplaid", image: "images/pouches/lightblueplaid.webp", soldOut: false }
 ];
