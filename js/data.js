@@ -23,11 +23,11 @@ const pouches = [
   { id: "orangeplaid", image: "images/pouches/orangeplaid.webp", soldOut: false },
   { id: "bluefloral", image: "images/pouches/bluefloral.webp", soldOut: false },
   { id: "pastel", image: "images/pouches/pastel.webp", soldOut: false },
-  { id: "darkplaid", image: "images/pouches/darkplaid.webp", soldOut: false },
   { id: "yellow", image: "images/pouches/yellow.webp", soldOut: false },
   { id: "cars", image: "images/pouches/cars.webp", soldOut: false },
   { id: "redplaid", image: "images/pouches/redplaid.webp", soldOut: false },
   { id: "beigestripes", image: "images/pouches/beigestripes.webp", soldOut: false },
+  { id: "darkplaid", image: "images/pouches/darkplaid.webp", soldOut: false },
   { id: "lightblueplaid", image: "images/pouches/lightblueplaid.webp", soldOut: false },
   { id: "lines", image: "images/pouches/lines.webp", soldOut: false }
 ];
