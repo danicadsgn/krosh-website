@@ -3,8 +3,8 @@ const selectedBagLabel = document.querySelector("#selected-bag-label");
 const pouchOptionsContainer = document.querySelector("#pouch-options");
 const combinationImage = document.querySelector("#combination-image");
 
-let selectedBag = "red";
-let selectedPouch = "bluefloral";
+let selectedBag = "peach";
+let selectedPouch = "redplaid";
 
 function getFirstAvailableItem(items) {
   return items.find((item) => !item.soldOut);
