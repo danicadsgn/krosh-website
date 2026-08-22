@@ -1266,6 +1266,10 @@
 
 <script>
 (function () {
+    if (new URLSearchParams(window.location.search).has("lock")) {
+        localStorage.removeItem("krosh_unlocked");
+    }
+
     var unlocked = localStorage.getItem("krosh_unlocked") === "1";
     var soldOutSection = document.querySelector(".sold-out-section");
     var configuratorSection = document.querySelector(".configurator");
@@ -1619,25 +1623,19 @@
                     <div class="faq-answer-inner">
 
                         <p>
-                            Svaka torba je ručno heklana od recikliranog pamuka,
-                            pa se dimenzije mogu neznatno razlikovati.
+                            Svaka torba je malo drugačije veličine, u zavisnosti
+                            od debljine i serije recikliranog pamuka od kog je
+                            heklana.
                         </p>
 
                         <p>
-                            Reciklirani pamuk dolazi u različitim debljinama
-                            i serijama, zbog čega nijedne dve torbe nisu
-                            potpuno identične.
-                        </p>
-
-                        <p>
-                            I vrećice izrađujem u različitim veličinama,
-                            u zavisnosti od raspoloživog materijala, ali je
-                            svaka vrećica kompatibilna sa svakom torbom.
-                        </p>
-
-                        <p>
-                            Ako te zanima tačna dimenzija određene kombinacije,
-                            slobodno mi piši na Instagramu.
+                            Za tačne dimenzije određene torbe slobodno mi piši
+                            putem
+                            <a
+                                href="https://www.instagram.com/krosh.rs/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >Instagrama</a>.
                         </p>
 
                     </div>

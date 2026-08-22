@@ -206,14 +206,12 @@
 
     <div class="sold-out-hero">
         <img
-            src="images/home/heroearly.webp"
+            src="images/home/hero.webp"
             alt="KROSH nova kolekcija — uskoro"
         >
     </div>
 
     <div class="sold-out-content">
-
-    <h1>Nova KROSH kolekcija stiže &lt;3</h1>
 
     <form class="unlock-form" id="unlock-form">
 
@@ -221,7 +219,7 @@
             type="text"
             id="unlock-password"
             class="unlock-input"
-            placeholder="Unesi šifru"
+            placeholder="Unesi lozinku"
             autocomplete="off"
         >
 
@@ -232,26 +230,40 @@
     </form>
 
     <p class="unlock-error" id="unlock-error" hidden>
-        Pogrešna šifra, pokušaj ponovo.
+        Pogrešna lozinka, pokušaj ponovo.
     </p>
+
+    </div>
 
 </section>
 
 <!-- HERO — LIVE (posle otključavanja / posle punog lansiranja) -->
-<!-- TODO: Danica šalje finalni sadržaj (tekst + slika + CTA ka torbe.html) -->
 
-<section class="hero-live" id="hero-live" hidden>
+<section class="sold-out-section hero-live" id="hero-live" hidden>
 
-    <h1>Nova kolekcija je tu &lt;3</h1>
+    <a href="torbe.html" class="sold-out-hero">
+        <img
+            src="images/home/hero.webp"
+            alt="KROSH nova kolekcija"
+        >
+    </a>
+
+    <div class="sold-out-content">
 
     <a href="torbe.html" class="hero-live-cta">
-        Napravi svoju kombinaciju
+        Napravi svoju kombinaciju &lt;3
     </a>
+
+    </div>
 
 </section>
 
 <script>
 (function () {
+    if (new URLSearchParams(window.location.search).has("lock")) {
+        localStorage.removeItem("krosh_unlocked");
+    }
+
     var unlocked = localStorage.getItem("krosh_unlocked") === "1";
     var heroLocked = document.getElementById("hero-locked");
     var heroLive = document.getElementById("hero-live");
@@ -344,84 +356,6 @@
                         rel="noopener noreferrer"
                     >@dzeli.jpg</a>
                 </p>
-            </div>
-
-        </section>
-
-
-        <!-- INSTAGRAM -->
-
-        <section class="home-instagram">
-
-            <img
-                src="images/ui/hajdedasepratimo.svg"
-                alt="Hajde da se pratimo"
-                class="home-instagram-title"
-            >
-
-            <div class="home-instagram-frame">
-
-                <div class="home-instagram-header">
-
-                    <img
-                        src="images/ui/instagram.svg"
-                        alt=""
-                        class="home-instagram-icon"
-                    >
-
-                    <span class="home-instagram-handle">@krosh.rs</span>
-
-                </div>
-
-                <div class="home-instagram-grid">
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <img src="images/home/instagram/insta-01.webp" alt="" loading="lazy">
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <video
-                            src="images/home/instagram/insta-02.mp4"
-                            autoplay
-                            loop
-                            muted
-                            playsinline
-                            preload="metadata"
-                        ></video>
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <img src="images/home/instagram/insta-03.webp" alt="" loading="lazy">
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <video
-                            src="images/home/instagram/insta-04.mp4"
-                            autoplay
-                            loop
-                            muted
-                            playsinline
-                            preload="metadata"
-                        ></video>
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <img src="images/home/instagram/insta-05.webp" alt="" loading="lazy">
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <video
-                            src="images/home/instagram/insta-06.mov"
-                            autoplay
-                            loop
-                            muted
-                            playsinline
-                            preload="metadata"
-                        ></video>
-                    </a>
-
-                </div>
-
             </div>
 
         </section>
@@ -633,6 +567,84 @@
                         </p>
 
                     </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- INSTAGRAM -->
+
+        <section class="home-instagram">
+
+            <img
+                src="images/ui/hajdedasepratimo.svg"
+                alt="Hajde da se pratimo"
+                class="home-instagram-title"
+            >
+
+            <div class="home-instagram-frame">
+
+                <div class="home-instagram-header">
+
+                    <img
+                        src="images/ui/instagram.svg"
+                        alt=""
+                        class="home-instagram-icon"
+                    >
+
+                    <span class="home-instagram-handle">@krosh.rs</span>
+
+                </div>
+
+                <div class="home-instagram-grid">
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <img src="images/home/instagram/insta-01.webp" alt="" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <video
+                            src="images/home/instagram/insta-02.mp4"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            preload="metadata"
+                        ></video>
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <img src="images/home/instagram/insta-03.webp" alt="" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <video
+                            src="images/home/instagram/insta-04.mp4"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            preload="metadata"
+                        ></video>
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <img src="images/home/instagram/insta-05.webp" alt="" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <video
+                            src="images/home/instagram/insta-06.mov"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            preload="metadata"
+                        ></video>
+                    </a>
 
                 </div>
 
