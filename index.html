@@ -205,9 +205,8 @@
 <section class="sold-out-section" id="hero-locked">
 
     <div class="sold-out-hero">
-        <!-- TODO: zameniti sa slikom koju Danica šalje za early access hero -->
         <img
-            src="images/ui/sold-out-hero.webp"
+            src="images/home/heroearly.webp"
             alt="KROSH nova kolekcija — uskoro"
         >
     </div>
@@ -236,9 +235,414 @@
         Pogrešna šifra, pokušaj ponovo.
     </p>
 
-    <p class="hero-locked-newsletter-lead">
-        Nemaš šifru? Prijavi se za sledeći put:
-    </p>
+</section>
+
+<!-- HERO — LIVE (posle otključavanja / posle punog lansiranja) -->
+<!-- TODO: Danica šalje finalni sadržaj (tekst + slika + CTA ka torbe.html) -->
+
+<section class="hero-live" id="hero-live" hidden>
+
+    <h1>Nova kolekcija je tu &lt;3</h1>
+
+    <a href="torbe.html" class="hero-live-cta">
+        Napravi svoju kombinaciju
+    </a>
+
+</section>
+
+<script>
+(function () {
+    var unlocked = localStorage.getItem("krosh_unlocked") === "1";
+    var heroLocked = document.getElementById("hero-locked");
+    var heroLive = document.getElementById("hero-live");
+
+    heroLocked.hidden = unlocked;
+    heroLive.hidden = !unlocked;
+})();
+</script>
+
+        <!-- OTHER PRODUCTS -->
+
+        <section class="home-categories">
+
+            <h2 class="home-categories-title">
+                Pogledaj sve proizvode
+                <span class="home-categories-title-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6 9L12 15L18 9"></path>
+                    </svg>
+                </span>
+            </h2>
+
+            <div class="home-categories-list">
+
+                <a href="torbe.html" class="home-category-card">
+                    <span class="home-category-card-thumb">
+                        <img src="images/home/torbe.svg" alt="">
+                    </span>
+                    <span class="home-category-card-title">Torbe</span>
+                </a>
+
+                <a href="marame.html" class="home-category-card">
+                    <span class="home-category-card-thumb">
+                        <img src="images/home/marame.svg" alt="">
+                    </span>
+                    <span class="home-category-card-title">Marame</span>
+                </a>
+
+                <a href="aksesoari.html" class="home-category-card">
+                    <span class="home-category-card-thumb">
+                        <img src="images/home/aksesoari.svg" alt="">
+                    </span>
+                    <span class="home-category-card-title">Aksesoari</span>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section class="home-about">
+
+            <div class="home-about-content">
+
+                <img
+                    src="images/ui/omeni.svg"
+                    alt="O meni"
+                    class="home-about-title"
+                >
+
+                <p class="home-about-text">
+                    KROSH je mali brend koji neguje promišljeniji pristup modi kroz ručni rad,
+                    male serije i pažljiv izbor materijala. Nastao je iz poštovanja prema
+                    kreativnosti i posvećenosti žena u mojoj porodici, uz želju da tradicionalne
+                    tehnike dobiju savremeniji izraz.
+                </p>
+
+                <p class="home-about-text">
+                    Sve komade osmišljavam i izrađujem sama, spoooooro i u ograničenim količinama.
+                </p>
+
+                <p class="home-about-signature">Danica</p>
+
+            </div>
+
+            <div class="home-about-photo">
+                <img
+                    src="images/home/about.webp"
+                    alt="Danica, osnivačica KROSH-a, drži KROSH torbicu"
+                    loading="lazy"
+                >
+
+                <p class="home-about-credit">
+                    Photo by
+                    <a
+                        href="https://www.instagram.com/dzeli.jpg/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >@dzeli.jpg</a>
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- INSTAGRAM -->
+
+        <section class="home-instagram">
+
+            <img
+                src="images/ui/hajdedasepratimo.svg"
+                alt="Hajde da se pratimo"
+                class="home-instagram-title"
+            >
+
+            <div class="home-instagram-frame">
+
+                <div class="home-instagram-header">
+
+                    <img
+                        src="images/ui/instagram.svg"
+                        alt=""
+                        class="home-instagram-icon"
+                    >
+
+                    <span class="home-instagram-handle">@krosh.rs</span>
+
+                </div>
+
+                <div class="home-instagram-grid">
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <img src="images/home/instagram/insta-01.webp" alt="" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <video
+                            src="images/home/instagram/insta-02.mp4"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            preload="metadata"
+                        ></video>
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <img src="images/home/instagram/insta-03.webp" alt="" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <video
+                            src="images/home/instagram/insta-04.mp4"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            preload="metadata"
+                        ></video>
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <img src="images/home/instagram/insta-05.webp" alt="" loading="lazy">
+                    </a>
+
+                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
+                        <video
+                            src="images/home/instagram/insta-06.mov"
+                            autoplay
+                            loop
+                            muted
+                            playsinline
+                            preload="metadata"
+                        ></video>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FAQ -->
+
+        <section class="faq home-faq">
+
+            <img
+                src="images/ui/faq.svg"
+                alt="FAQ"
+                class="faq-title"
+            >
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>
+                        Kako mogu da poručim?
+                    </span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            KROSH funkcioniše kao online katalog. Kada izabereš
+                            proizvod ili napraviš svoju kombinaciju, sajt će te
+                            preusmeriti na KROSH Instagram gde završavamo
+                            porudžbinu. Sve komade izrađujem u malim
+                            količinama ili po porudžbini, pa na ovaj način mogu
+                            da potvrdim dostupnost i dogovorim sve detalje sa
+                            tobom.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>
+                        Kako se vrši plaćanje?
+                    </span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            Porudžbine se plaćaju unapred, nakon potvrde
+                            porudžbine i dogovora putem Instagram poruke.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>
+                        Kako preuzimam porudžbinu?
+                    </span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            Porudžbine šaljem poštom širom Srbije, a moguće je
+                            i lično preuzimanje u Beogradu po dogovoru.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>
+                        Da li je moguć povrat ili zamena?
+                    </span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            Većina KROSH komada izrađuje se po porudžbini,
+                            prema odabranoj kombinaciji, modelu ili boji, pa
+                            povrat zbog predomišljanja nije moguć nakon što
+                            izrada počne.
+                        </p>
+
+                        <p>
+                            Ako proizvod stigne oštećen, dobiješ pogrešan
+                            proizvod ili postoji neki drugi problem sa
+                            porudžbinom, javi mi se putem Instagram poruke ili
+                            na
+                            <a href="mailto:kroshcrochet.rs@gmail.com">kroshcrochet.rs@gmail.com</a>
+                            kako bismo ga rešili.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="faq-item">
+
+                <button
+                    class="faq-question"
+                    type="button"
+                >
+                    <span>
+                        Da li šalješ van Srbije?
+                    </span>
+
+                    <span
+                        class="faq-arrow"
+                        aria-hidden="true"
+                    >
+                        <svg viewBox="0 0 24 24">
+                            <path d="M6 9L12 15L18 9"></path>
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="faq-answer">
+
+                    <div class="faq-answer-inner">
+
+                        <p>
+                            Da! Slanje van Srbije je moguće po dogovoru. Cena i
+                            način dostave zavise od zemlje i same pošiljke, pa
+                            mi pre poručivanja piši putem Instagrama ili na
+                            <a href="mailto:kroshcrochet.rs@gmail.com">kroshcrochet.rs@gmail.com</a>
+                            kako bismo proverili detalje. Eventualne uvozne
+                            dažbine u zemlji primaoca nisu uključene u cenu
+                            dostave.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NEWSLETTER -->
+
+        <section class="home-newsletter">
 
     <div class="sold-out-newsletter">
         <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1785148");</style>
@@ -988,409 +1392,6 @@
     </div>
 
 </div>
-
-</section>
-
-<!-- HERO — LIVE (posle otključavanja / posle punog lansiranja) -->
-<!-- TODO: Danica šalje finalni sadržaj (tekst + slika + CTA ka torbe.html) -->
-
-<section class="hero-live" id="hero-live" hidden>
-
-    <h1>Nova kolekcija je tu &lt;3</h1>
-
-    <a href="torbe.html" class="hero-live-cta">
-        Napravi svoju kombinaciju
-    </a>
-
-</section>
-
-<script>
-(function () {
-    var unlocked = localStorage.getItem("krosh_unlocked") === "1";
-    var heroLocked = document.getElementById("hero-locked");
-    var heroLive = document.getElementById("hero-live");
-
-    heroLocked.hidden = unlocked;
-    heroLive.hidden = !unlocked;
-})();
-</script>
-
-        <!-- OTHER PRODUCTS -->
-
-        <section class="home-categories">
-
-            <h2 class="home-categories-title">
-                Pogledaj sve proizvode
-                <span class="home-categories-title-arrow" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M6 9L12 15L18 9"></path>
-                    </svg>
-                </span>
-            </h2>
-
-            <div class="home-categories-list">
-
-                <a href="torbe.html" class="home-category-card">
-                    <span class="home-category-card-thumb">
-                        <img src="images/home/torbe.svg" alt="">
-                    </span>
-                    <span class="home-category-card-title">Torbe</span>
-                </a>
-
-                <a href="marame.html" class="home-category-card">
-                    <span class="home-category-card-thumb">
-                        <img src="images/home/marame.svg" alt="">
-                    </span>
-                    <span class="home-category-card-title">Marame</span>
-                </a>
-
-                <a href="aksesoari.html" class="home-category-card">
-                    <span class="home-category-card-thumb">
-                        <img src="images/home/aksesoari.svg" alt="">
-                    </span>
-                    <span class="home-category-card-title">Aksesoari</span>
-                </a>
-
-            </div>
-
-        </section>
-
-
-        <!-- ABOUT -->
-
-        <section class="home-about">
-
-            <div class="home-about-content">
-
-                <img
-                    src="images/ui/omeni.svg"
-                    alt="O meni"
-                    class="home-about-title"
-                >
-
-                <p class="home-about-text">
-                    KROSH je mali brend koji neguje promišljeniji pristup modi kroz ručni rad,
-                    male serije i pažljiv izbor materijala. Nastao je iz poštovanja prema
-                    kreativnosti i posvećenosti žena u mojoj porodici, uz želju da tradicionalne
-                    tehnike dobiju savremeniji izraz.
-                </p>
-
-                <p class="home-about-text">
-                    Sve komade osmišljavam i izrađujem sama, spoooooro i u ograničenim količinama.
-                </p>
-
-                <p class="home-about-signature">Danica</p>
-
-            </div>
-
-            <div class="home-about-photo">
-                <img
-                    src="images/home/about.webp"
-                    alt="Danica, osnivačica KROSH-a, drži KROSH torbicu"
-                    loading="lazy"
-                >
-
-                <p class="home-about-credit">
-                    Photo by
-                    <a
-                        href="https://www.instagram.com/dzeli.jpg/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >@dzeli.jpg</a>
-                </p>
-            </div>
-
-        </section>
-
-
-        <!-- INSTAGRAM -->
-
-        <section class="home-instagram">
-
-            <img
-                src="images/ui/hajdedasepratimo.svg"
-                alt="Hajde da se pratimo"
-                class="home-instagram-title"
-            >
-
-            <div class="home-instagram-frame">
-
-                <div class="home-instagram-header">
-
-                    <img
-                        src="images/ui/instagram.svg"
-                        alt=""
-                        class="home-instagram-icon"
-                    >
-
-                    <span class="home-instagram-handle">@krosh.rs</span>
-
-                </div>
-
-                <div class="home-instagram-grid">
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <img src="images/home/instagram/insta-01.webp" alt="" loading="lazy">
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <video
-                            src="images/home/instagram/insta-02.mp4"
-                            autoplay
-                            loop
-                            muted
-                            playsinline
-                            preload="metadata"
-                        ></video>
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <img src="images/home/instagram/insta-03.webp" alt="" loading="lazy">
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <video
-                            src="images/home/instagram/insta-04.mp4"
-                            autoplay
-                            loop
-                            muted
-                            playsinline
-                            preload="metadata"
-                        ></video>
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <img src="images/home/instagram/insta-05.webp" alt="" loading="lazy">
-                    </a>
-
-                    <a href="https://www.instagram.com/krosh.rs/" class="home-instagram-photo" target="_blank" rel="noopener noreferrer">
-                        <video
-                            src="images/home/instagram/insta-06.mov"
-                            autoplay
-                            loop
-                            muted
-                            playsinline
-                            preload="metadata"
-                        ></video>
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- FAQ -->
-
-        <section class="faq home-faq">
-
-            <img
-                src="images/ui/faq.svg"
-                alt="FAQ"
-                class="faq-title"
-            >
-
-
-            <div class="faq-item">
-
-                <button
-                    class="faq-question"
-                    type="button"
-                >
-                    <span>
-                        Kako mogu da poručim?
-                    </span>
-
-                    <span
-                        class="faq-arrow"
-                        aria-hidden="true"
-                    >
-                        <svg viewBox="0 0 24 24">
-                            <path d="M6 9L12 15L18 9"></path>
-                        </svg>
-                    </span>
-                </button>
-
-                <div class="faq-answer">
-
-                    <div class="faq-answer-inner">
-
-                        <p>
-                            KROSH funkcioniše kao online katalog. Kada izabereš
-                            proizvod ili napraviš svoju kombinaciju, sajt će te
-                            preusmeriti na KROSH Instagram gde završavamo
-                            porudžbinu. Sve komade izrađujem u malim
-                            količinama ili po porudžbini, pa na ovaj način mogu
-                            da potvrdim dostupnost i dogovorim sve detalje sa
-                            tobom.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button
-                    class="faq-question"
-                    type="button"
-                >
-                    <span>
-                        Kako se vrši plaćanje?
-                    </span>
-
-                    <span
-                        class="faq-arrow"
-                        aria-hidden="true"
-                    >
-                        <svg viewBox="0 0 24 24">
-                            <path d="M6 9L12 15L18 9"></path>
-                        </svg>
-                    </span>
-                </button>
-
-                <div class="faq-answer">
-
-                    <div class="faq-answer-inner">
-
-                        <p>
-                            Porudžbine se plaćaju unapred, nakon potvrde
-                            porudžbine i dogovora putem Instagram poruke.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button
-                    class="faq-question"
-                    type="button"
-                >
-                    <span>
-                        Kako preuzimam porudžbinu?
-                    </span>
-
-                    <span
-                        class="faq-arrow"
-                        aria-hidden="true"
-                    >
-                        <svg viewBox="0 0 24 24">
-                            <path d="M6 9L12 15L18 9"></path>
-                        </svg>
-                    </span>
-                </button>
-
-                <div class="faq-answer">
-
-                    <div class="faq-answer-inner">
-
-                        <p>
-                            Porudžbine šaljem poštom širom Srbije, a moguće je
-                            i lično preuzimanje u Beogradu po dogovoru.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button
-                    class="faq-question"
-                    type="button"
-                >
-                    <span>
-                        Da li je moguć povrat ili zamena?
-                    </span>
-
-                    <span
-                        class="faq-arrow"
-                        aria-hidden="true"
-                    >
-                        <svg viewBox="0 0 24 24">
-                            <path d="M6 9L12 15L18 9"></path>
-                        </svg>
-                    </span>
-                </button>
-
-                <div class="faq-answer">
-
-                    <div class="faq-answer-inner">
-
-                        <p>
-                            Većina KROSH komada izrađuje se po porudžbini,
-                            prema odabranoj kombinaciji, modelu ili boji, pa
-                            povrat zbog predomišljanja nije moguć nakon što
-                            izrada počne.
-                        </p>
-
-                        <p>
-                            Ako proizvod stigne oštećen, dobiješ pogrešan
-                            proizvod ili postoji neki drugi problem sa
-                            porudžbinom, javi mi se putem Instagram poruke ili
-                            na
-                            <a href="mailto:kroshcrochet.rs@gmail.com">kroshcrochet.rs@gmail.com</a>
-                            kako bismo ga rešili.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="faq-item">
-
-                <button
-                    class="faq-question"
-                    type="button"
-                >
-                    <span>
-                        Da li šalješ van Srbije?
-                    </span>
-
-                    <span
-                        class="faq-arrow"
-                        aria-hidden="true"
-                    >
-                        <svg viewBox="0 0 24 24">
-                            <path d="M6 9L12 15L18 9"></path>
-                        </svg>
-                    </span>
-                </button>
-
-                <div class="faq-answer">
-
-                    <div class="faq-answer-inner">
-
-                        <p>
-                            Da! Slanje van Srbije je moguće po dogovoru. Cena i
-                            način dostave zavise od zemlje i same pošiljke, pa
-                            mi pre poručivanja piši putem Instagrama ili na
-                            <a href="mailto:kroshcrochet.rs@gmail.com">kroshcrochet.rs@gmail.com</a>
-                            kako bismo proverili detalje. Eventualne uvozne
-                            dažbine u zemlji primaoca nisu uključene u cenu
-                            dostave.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
 
         </section>
 

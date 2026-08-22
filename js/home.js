@@ -2,7 +2,7 @@
    EARLY ACCESS UNLOCK
 ========================= */
 
-const EARLY_ACCESS_PASSWORD = "PROMENI_ME"; // TODO: zameniti pravom šifrom pre push-a
+const EARLY_ACCESS_PASSWORD = "karirano";
 
 const unlockForm = document.querySelector("#unlock-form");
 const unlockInput = document.querySelector("#unlock-password");
