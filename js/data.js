@@ -1,17 +1,21 @@
 const bags = [
-  { id: "pink", color: "#F44A8E", label: "Hot Pink", soldOut: false },
-  { id: "brightgreen", color: "#055834", label: "Emerald", soldOut: false },
-  { id: "white", color: "#F6F6F6", label: "White", soldOut: false },
-  { id: "brown", color: "#592223", label: "Cocoa", soldOut: false },
-  { id: "lightolive", color: "#58816E", label: "Olive", soldOut: false },
-  { id: "babypink", color: "#EFAFC6", label: "Baby Pink", soldOut: false },
-  { id: "darkblue", color: "#0043C0", label: "Royal Blue", soldOut: false },
-  { id: "yellow", color: "#fff3b9", label: "Butter", soldOut: false },
-  { id: "darkgreen", color: "#0C463A", label: "Forest", soldOut: false },
-  { id: "red", color: "#D71331", label: "Red", soldOut: false },
-  { id: "black", color: "#0F0F0F", label: "Black", soldOut: false },
-  { id: "beige", color: "#E9E1CB", label: "Beige", soldOut: false },
-  { id: "darkolive", color: "#3D462C", label: "Moss", soldOut: false }
+  { id: "pink", color: "#FE7BE2", label: "Pink", soldOut: false },
+  { id: "butteryellow", color: "#FFFBC5", label: "Butter Yellow", soldOut: false },
+  { id: "royalblue", color: "#0043C0", label: "Royal Blue", soldOut: false },
+  { id: "black", color: "#101010", label: "Black", soldOut: false },
+  { id: "green", color: "#049F6E", label: "Green", soldOut: false },
+  { id: "jeans", color: "#4A66A3", label: "Jeans", soldOut: false },
+  { id: "peach", color: "#D99E9C", label: "Peach", soldOut: false },
+  { id: "pearlwhite", color: "#F8F3EC", label: "Pearl White", soldOut: false },
+  { id: "navy", color: "#2F3955", label: "Navy", soldOut: false },
+  { id: "red", color: "#C80C35", label: "Red", soldOut: false },
+  { id: "beige", color: "#F5E3D1", label: "Beige", soldOut: false },
+  { id: "olive", color: "#96B3A5", label: "Olive", soldOut: false },
+  { id: "blue", color: "#357EDE", label: "Blue", soldOut: false },
+  { id: "maroon", color: "#6C3334", label: "Maroon", soldOut: false },
+  { id: "truewhite", color: "#EEF5F8", label: "True White", soldOut: false },
+  { id: "purple", color: "#7C52C9", label: "Purple", soldOut: false },
+  { id: "terracotta", color: "#C24037", label: "Terracotta", soldOut: false }
 ];
 
 const pouches = [
