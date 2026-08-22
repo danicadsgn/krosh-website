@@ -1205,6 +1205,104 @@ button {
 }
 
 /* =========================
+   EARLY ACCESS UNLOCK
+========================= */
+
+.unlock-form {
+    display: flex;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.unlock-input {
+    flex: 1;
+    min-width: 0;
+
+    padding: 12px 14px;
+
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 13px;
+    color: #181818;
+}
+
+.unlock-input::placeholder {
+    color: #999999;
+}
+
+.unlock-button {
+    flex: 0 0 auto;
+
+    padding: 12px 20px;
+
+    border: 0;
+    border-radius: 8px;
+    background: #FF87BA;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.unlock-button:hover {
+    background: #ff73af;
+}
+
+.unlock-error {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #C80C35;
+}
+
+.hero-locked-newsletter-lead {
+    margin: 28px 0 8px;
+    font-size: 12px;
+    color: #7d7d7d;
+}
+
+/* =========================
+   HERO — LIVE
+========================= */
+
+.hero-live {
+    padding: 48px 0;
+    text-align: center;
+}
+
+.hero-live h1 {
+    margin: 0 0 20px;
+}
+
+.hero-live-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    border-radius: 8px;
+    background: #FF87BA;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+
+    transition: background 0.2s ease;
+}
+
+.hero-live-cta:hover {
+    background: #ff73af;
+}
+
+/* =========================
    MAILERLITE FORM OVERRIDES
 ========================= */
 

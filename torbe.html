@@ -226,7 +226,7 @@
 
         <!-- SOLD OUT -->
 
-<section class="sold-out-section" hidden>
+<section class="sold-out-section">
 
     <div class="sold-out-hero">
         <img
@@ -1159,7 +1159,7 @@
 
 </section>
 
-        <section class="configurator">
+        <section class="configurator" hidden>
 
             <div class="configurator-layout">
 
@@ -1263,6 +1263,17 @@
             </div>
 
             </section>
+
+<script>
+(function () {
+    var unlocked = localStorage.getItem("krosh_unlocked") === "1";
+    var soldOutSection = document.querySelector(".sold-out-section");
+    var configuratorSection = document.querySelector(".configurator");
+
+    soldOutSection.hidden = unlocked;
+    configuratorSection.hidden = !unlocked;
+})();
+</script>
 
         <section class="lifestyle">
 

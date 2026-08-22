@@ -200,20 +200,45 @@
         </header>
 
 
-        <!-- HERO / SOLD OUT -->
+        <!-- HERO — LOCKED (EARLY ACCESS) -->
 
-<section class="sold-out-section">
+<section class="sold-out-section" id="hero-locked">
 
     <div class="sold-out-hero">
+        <!-- TODO: zameniti sa slikom koju Danica šalje za early access hero -->
         <img
             src="images/ui/sold-out-hero.webp"
-            alt="KROSH torbica — prva kolekcija je rasprodata"
+            alt="KROSH nova kolekcija — uskoro"
         >
     </div>
 
     <div class="sold-out-content">
 
-    <h1>Prva KROSH kolekcija je rasprodata &lt;3</h1>
+    <h1>Nova KROSH kolekcija stiže &lt;3</h1>
+
+    <form class="unlock-form" id="unlock-form">
+
+        <input
+            type="text"
+            id="unlock-password"
+            class="unlock-input"
+            placeholder="Unesi šifru"
+            autocomplete="off"
+        >
+
+        <button type="submit" class="unlock-button">
+            Otključaj
+        </button>
+
+    </form>
+
+    <p class="unlock-error" id="unlock-error" hidden>
+        Pogrešna šifra, pokušaj ponovo.
+    </p>
+
+    <p class="hero-locked-newsletter-lead">
+        Nemaš šifru? Prijavi se za sledeći put:
+    </p>
 
     <div class="sold-out-newsletter">
         <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1785148");</style>
@@ -966,6 +991,29 @@
 
 </section>
 
+<!-- HERO — LIVE (posle otključavanja / posle punog lansiranja) -->
+<!-- TODO: Danica šalje finalni sadržaj (tekst + slika + CTA ka torbe.html) -->
+
+<section class="hero-live" id="hero-live" hidden>
+
+    <h1>Nova kolekcija je tu &lt;3</h1>
+
+    <a href="torbe.html" class="hero-live-cta">
+        Napravi svoju kombinaciju
+    </a>
+
+</section>
+
+<script>
+(function () {
+    var unlocked = localStorage.getItem("krosh_unlocked") === "1";
+    var heroLocked = document.getElementById("hero-locked");
+    var heroLive = document.getElementById("hero-live");
+
+    heroLocked.hidden = unlocked;
+    heroLive.hidden = !unlocked;
+})();
+</script>
 
         <!-- OTHER PRODUCTS -->
 
