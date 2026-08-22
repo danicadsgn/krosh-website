@@ -328,7 +328,7 @@ button {
 
 
 .configurator-pricing {
-    margin: 20px 0 0;
+    margin: 56px 0 0;
 }
 
 .configurator-pricing-row {
@@ -337,7 +337,7 @@ button {
     justify-content: space-between;
     gap: 16px;
 
-    margin-bottom: 4px;
+    margin-bottom: 8px;
 }
 
 .configurator-pricing-row:last-child {
@@ -346,7 +346,15 @@ button {
 
 .configurator-pricing-row span {
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
+    color: #181818;
+}
+
+.configurator-pricing-note {
+    margin: 16px 0 0;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.45;
     color: #181818;
 }
 
@@ -631,16 +639,28 @@ button {
     display: none;
 }
 
-.lifestyle-gallery img {
+.lifestyle-item {
+    position: relative;
+
     flex: 0 0 45%;
     width: 45%;
     max-width: 45%;
 
     aspect-ratio: 4 / 5;
+}
+
+.lifestyle-gallery img {
+    width: 100%;
+    height: 100%;
+
     object-fit: cover;
 
     border-radius: 0px;
     display: block;
+}
+
+.lifestyle-credit {
+    display: none;
 }
 
 .lifestyle-gallery {
@@ -652,7 +672,8 @@ button {
     user-select: none;
 }
 
-.lifestyle-gallery.dragging img {
+.lifestyle-gallery.dragging img,
+.lifestyle-gallery.dragging .lifestyle-credit {
     pointer-events: none;
 }
 
@@ -675,6 +696,25 @@ button {
 
     .lifestyle-gallery-wrapper {
         position: relative;
+    }
+
+    .lifestyle-credit {
+        display: block;
+        position: absolute;
+        left: 8px;
+        bottom: 8px;
+        z-index: 2;
+
+        font-size: 9px;
+        font-weight: 400;
+        line-height: 1.4;
+        color: #ffffff;
+        text-decoration: none;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.55);
+    }
+
+    .lifestyle-credit:hover {
+        text-decoration: underline;
     }
 
     .lifestyle-arrow {
@@ -805,22 +845,50 @@ button {
     display: none;
 }
 
-.lightbox-track img {
-    display: block;
+.lightbox-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
     flex: 0 0 100%;
     width: 100%;
     height: 100%;
 
-    object-fit: contain;
     scroll-snap-align: center;
+}
+
+.lightbox-slide img {
+    display: block;
+
+    width: 100%;
+    max-height: calc(100dvh - 48px);
+    height: auto;
+
+    object-fit: contain;
 
     transform: scale(0.9);
     transition: transform 0.35s ease;
 }
 
-.lightbox.active .lightbox-track img {
+.lightbox.active .lightbox-slide img {
     transform: scale(1);
+}
+
+.lightbox-credit {
+    align-self: flex-start;
+    margin: 8px 0 0 20px;
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.65);
+    text-align: left;
+}
+
+.lightbox-credit a {
+    color: inherit;
+    text-decoration: underline;
 }
 
 .lightbox-close {
@@ -942,6 +1010,14 @@ button {
 
     .configurator-pricing-row span {
     font-size: 14px;
+    }
+
+    .configurator-pricing-note {
+    font-size: 14px;
+    }
+
+    .configurator-pricing {
+    margin-top: 64px;
     }
 
     .faq-question {

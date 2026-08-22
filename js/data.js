@@ -1,11 +1,11 @@
 const bags = [
-  { id: "pink", color: "#FE7BE2", label: "Pink", soldOut: false },
+  { id: "peach", color: "#D99E9C", label: "Peach", soldOut: false },
   { id: "butteryellow", color: "#FFFBC5", label: "Butter Yellow", soldOut: false },
   { id: "royalblue", color: "#0043C0", label: "Royal Blue", soldOut: false },
   { id: "black", color: "#101010", label: "Black", soldOut: false },
   { id: "green", color: "#049F6E", label: "Green", soldOut: false },
   { id: "jeans", color: "#4A66A3", label: "Jeans", soldOut: false },
-  { id: "peach", color: "#D99E9C", label: "Peach", soldOut: false },
+  { id: "pink", color: "#FE7BE2", label: "Pink", soldOut: false },
   { id: "pearlwhite", color: "#F8F3EC", label: "Pearl White", soldOut: false },
   { id: "navy", color: "#2F3955", label: "Navy", soldOut: false },
   { id: "red", color: "#C80C35", label: "Red", soldOut: false },

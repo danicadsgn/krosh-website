@@ -307,7 +307,8 @@ const lightboxClose = document.querySelector(".lightbox-close");
 if (lightbox && lightboxTrack) {
 
     const lifestyleImages = document.querySelectorAll(".lifestyle-gallery img");
-    const lightboxImages = lightboxTrack.querySelectorAll("img");
+    const lightboxSlides = lightboxTrack.querySelectorAll(".lightbox-slide");
+    const lightboxCredits = lightboxTrack.querySelectorAll(".lightbox-credit a");
 
     function openLightbox(index) {
         lightbox.classList.add("active");
@@ -315,7 +316,7 @@ if (lightbox && lightboxTrack) {
 
         document.body.style.overflow = "hidden";
 
-        const target = lightboxImages[index];
+        const target = lightboxSlides[index];
 
         if (target) {
             lightboxTrack.scrollLeft = target.offsetLeft;
@@ -343,6 +344,12 @@ if (lightbox && lightboxTrack) {
     lightboxClose.addEventListener("click", closeLightbox);
 
     lightboxTrack.addEventListener("click", closeLightbox);
+
+    lightboxCredits.forEach((link) => {
+        link.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+    });
 
     document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") closeLightbox();
