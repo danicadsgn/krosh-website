@@ -130,6 +130,7 @@ button {
 }
 
 .preview {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,13 +139,46 @@ button {
     overflow: hidden;
 }
 
-.preview img {
+.preview > img {
     width: 100%;
     max-width: 420px;
     height: 340px;
     object-fit: contain;
     transform: translateY(12px);
 
+}
+
+.preview-loader {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffffff;
+
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.preview-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preview-loader-logo {
+    width: 120px;
+    height: 120px;
+    animation: preview-loader-spin 5s linear infinite;
+}
+
+@keyframes preview-loader-spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -1073,7 +1107,7 @@ button {
     overflow: visible;
 }
 
-.preview img {
+.preview > img {
     width: 118%;
     max-width: 800px;
     height: 520px;
@@ -1331,6 +1365,16 @@ button {
     margin-bottom: 0;
 }
 
+#mlb2-44241246 .horizontal-fields {
+    margin-bottom: 8px !important;
+}
+
+@media only screen and (max-width: 400px) {
+    body #mlb2-44241246.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm {
+        padding-bottom: 0 !important;
+    }
+}
+
 #mlb2-44241246.ml-form-embedContainer {
     width: 100% !important;
     margin: 0 auto !important;
@@ -1492,6 +1536,17 @@ button {
     font-size: 13px !important;
     line-height: 1.5 !important;
     text-align: left !important;
+}
+
+#mlb2-44241246 .ml-form-embedContent p.home-newsletter-lead {
+    font-weight: 600 !important;
+    color: #181818 !important;
+}
+
+@media (min-width: 992px) {
+    #mlb2-44241246 .ml-form-embedContent p.home-newsletter-lead {
+        font-size: 14px !important;
+    }
 }
 
 #mlb2-44241246 .ml-button-horizontal button,

@@ -2,6 +2,11 @@ const bagOptionsContainer = document.querySelector("#bag-options");
 const selectedBagLabel = document.querySelector("#selected-bag-label");
 const pouchOptionsContainer = document.querySelector("#pouch-options");
 const combinationImage = document.querySelector("#combination-image");
+const previewLoader = document.querySelector("#preview-loader");
+
+combinationImage.addEventListener("load", () => {
+  previewLoader.classList.add("is-hidden");
+});
 
 let selectedBag = "peach";
 let selectedPouch = "redplaid";
@@ -38,8 +43,23 @@ for (const bag of bags) {
 }
 
 function updateCombinationImage() {
-  combinationImage.src =
+  const nextSrc =
     `images/combinations/bag-${selectedBag}_pouch-${selectedPouch}.webp`;
+
+  if (combinationImage.getAttribute("src") === nextSrc) {
+    if (combinationImage.complete) {
+      previewLoader.classList.add("is-hidden");
+    }
+    return;
+  }
+
+  previewLoader.classList.remove("is-hidden");
+
+  combinationImage.src = nextSrc;
+
+  if (combinationImage.complete) {
+    previewLoader.classList.add("is-hidden");
+  }
 }
 
 function renderBagOptions() {
