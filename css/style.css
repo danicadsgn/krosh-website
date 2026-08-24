@@ -1235,7 +1235,6 @@ button {
     padding: 0;
 }
 
-#hero-locked .sold-out-content,
 #hero-live .sold-out-content {
     margin-top: 16px;
 }
@@ -1246,68 +1245,6 @@ button {
 
 .sold-out-content p {
     margin: 0;
-}
-
-/* =========================
-   EARLY ACCESS UNLOCK
-========================= */
-
-.unlock-form {
-    display: flex;
-    gap: 8px;
-    margin-top: 0;
-}
-
-.unlock-input {
-    flex: 1;
-    min-width: 0;
-    min-height: 52px;
-    box-sizing: border-box;
-
-    padding: 12px 16px;
-
-    border: 1px solid #e2e2e2;
-    border-radius: 4px;
-    background: #ffffff;
-
-    font-family: inherit;
-    font-size: 14px;
-    color: #181818;
-}
-
-.unlock-input::placeholder {
-    color: #999999;
-}
-
-.unlock-button {
-    flex: 0 0 auto;
-    min-height: 52px;
-    box-sizing: border-box;
-
-    padding: 12px 20px;
-
-    border: 0;
-    border-radius: 4px;
-    background: #FF87BA;
-    color: #ffffff;
-
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: 600;
-    white-space: nowrap;
-    cursor: pointer;
-
-    transition: background 0.2s ease;
-}
-
-.unlock-button:hover {
-    background: #ff73af;
-}
-
-.unlock-error {
-    margin: 10px 0 0;
-    font-size: 12px;
-    color: #C80C35;
 }
 
 /* =========================
@@ -1664,7 +1601,6 @@ button.primary:hover {
         box-sizing: border-box;
     }
 
-    #hero-locked .sold-out-content,
     #hero-live .sold-out-content {
         padding-top: 16px;
     }

@@ -200,46 +200,9 @@
         </header>
 
 
-        <!-- HERO — LOCKED (EARLY ACCESS) -->
+        <!-- HERO -->
 
-<section class="sold-out-section" id="hero-locked">
-
-    <div class="sold-out-hero">
-        <img
-            src="images/home/hero.webp"
-            alt="KROSH nova kolekcija — uskoro"
-        >
-    </div>
-
-    <div class="sold-out-content">
-
-    <form class="unlock-form" id="unlock-form">
-
-        <input
-            type="text"
-            id="unlock-password"
-            class="unlock-input"
-            placeholder="Unesi lozinku"
-            autocomplete="off"
-        >
-
-        <button type="submit" class="unlock-button">
-            Otključaj
-        </button>
-
-    </form>
-
-    <p class="unlock-error" id="unlock-error" hidden>
-        Pogrešna lozinka, pokušaj ponovo.
-    </p>
-
-    </div>
-
-</section>
-
-<!-- HERO — LIVE (posle otključavanja / posle punog lansiranja) -->
-
-<section class="sold-out-section hero-live" id="hero-live" hidden>
+<section class="sold-out-section hero-live" id="hero-live">
 
     <a href="torbe.html" class="sold-out-hero">
         <img
@@ -257,21 +220,6 @@
     </div>
 
 </section>
-
-<script>
-(function () {
-    if (new URLSearchParams(window.location.search).has("lock")) {
-        localStorage.removeItem("krosh_unlocked");
-    }
-
-    var unlocked = localStorage.getItem("krosh_unlocked") === "1";
-    var heroLocked = document.getElementById("hero-locked");
-    var heroLive = document.getElementById("hero-live");
-
-    heroLocked.hidden = unlocked;
-    heroLive.hidden = !unlocked;
-})();
-</script>
 
         <!-- OTHER PRODUCTS -->
 

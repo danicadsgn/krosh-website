@@ -1,36 +1,4 @@
 /* =========================
-   EARLY ACCESS UNLOCK
-========================= */
-
-const EARLY_ACCESS_PASSWORD = "karirano";
-
-const unlockForm = document.querySelector("#unlock-form");
-const unlockInput = document.querySelector("#unlock-password");
-const unlockError = document.querySelector("#unlock-error");
-
-if (unlockForm && unlockInput) {
-
-    unlockForm.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        const entered = unlockInput.value.trim().toLowerCase();
-        const correct = EARLY_ACCESS_PASSWORD.trim().toLowerCase();
-
-        if (entered === correct) {
-            localStorage.setItem("krosh_unlocked", "1");
-            window.location.href = "torbe.html";
-        } else {
-            unlockError.hidden = false;
-        }
-    });
-
-    unlockInput.addEventListener("input", () => {
-        unlockError.hidden = true;
-    });
-}
-
-
-/* =========================
    MOBILE MENU
 ========================= */
 
