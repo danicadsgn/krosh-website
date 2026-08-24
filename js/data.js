@@ -7,7 +7,7 @@ const bags = [
   { id: "jeans", color: "#4A66A3", label: "Jeans", soldOut: true },
   { id: "pink", color: "#FE7BE2", label: "Pink", soldOut: false },
   { id: "pearlwhite", color: "#F8F3EC", label: "Pearl White", soldOut: false },
-  { id: "navy", color: "#2F3955", label: "Navy", soldOut: false },
+  { id: "navy", color: "#2F3955", label: "Navy", soldOut: true },
   { id: "red", color: "#C80C35", label: "Red", soldOut: false },
   { id: "beige", color: "#F5E3D1", label: "Beige", soldOut: false },
   { id: "olive", color: "#96B3A5", label: "Olive", soldOut: false },
@@ -31,7 +31,7 @@ const pouches = [
   { id: "cars", image: "images/pouches/cars.webp", soldOut: false },
   { id: "redplaid", image: "images/pouches/redplaid.webp", soldOut: true },
   { id: "beigestripes", image: "images/pouches/beigestripes.webp", soldOut: false },
-  { id: "darkplaid", image: "images/pouches/darkplaid.webp", soldOut: false },
+  { id: "darkplaid", image: "images/pouches/darkplaid.webp", soldOut: true },
   { id: "lightblueplaid", image: "images/pouches/lightblueplaid.webp", soldOut: false },
   { id: "lines", image: "images/pouches/lines.webp", soldOut: false }
 ];
