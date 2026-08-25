@@ -15,7 +15,7 @@ const bags = [
   { id: "maroon", color: "#6C3334", label: "Maroon", soldOut: false },
   { id: "truewhite", color: "#EEF5F8", label: "True White", soldOut: false },
   { id: "purple", color: "#7C52C9", label: "Purple", soldOut: false },
-  { id: "terracotta", color: "#C24037", label: "Terracotta", soldOut: true }
+  { id: "terracotta", color: "#C24037", label: "Terracotta", soldOut: false }
 ];
 
 const pouches = [
