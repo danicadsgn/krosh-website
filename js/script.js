@@ -8,8 +8,8 @@ combinationImage.addEventListener("load", () => {
   previewLoader.classList.add("is-hidden");
 });
 
-let selectedBag = "red";
-let selectedPouch = "lines";
+let selectedBag = "pearlwhite";
+let selectedPouch = "cars";
 
 function getFirstAvailableItem(items) {
   return items.find((item) => !item.soldOut);
