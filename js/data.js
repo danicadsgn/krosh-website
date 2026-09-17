@@ -10,7 +10,7 @@ const bags = [
   { id: "navy", color: "#2F3955", label: "Navy", soldOut: false },
   { id: "red", color: "#C80C35", label: "Red", soldOut: true },
   { id: "beige", color: "#F5E3D1", label: "Beige", soldOut: false },
-  { id: "olive", color: "#96B3A5", label: "Olive", soldOut: false },
+  { id: "olive", color: "#96B3A5", label: "Olive", soldOut: true },
   { id: "blue", color: "#357EDE", label: "Blue", soldOut: false },
   { id: "maroon", color: "#6C3334", label: "Maroon", soldOut: false },
   { id: "truewhite", color: "#EEF5F8", label: "True White", soldOut: false },
