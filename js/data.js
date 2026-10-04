@@ -33,5 +33,5 @@ const pouches = [
   { id: "beigestripes", image: "images/pouches/beigestripes.webp", soldOut: false },
   { id: "darkplaid", image: "images/pouches/darkplaid.webp", soldOut: true },
   { id: "lightblueplaid", image: "images/pouches/lightblueplaid.webp", soldOut: false },
-  { id: "lines", image: "images/pouches/lines.webp", soldOut: false }
+  { id: "lines", image: "images/pouches/lines.webp", soldOut: true }
 ];
