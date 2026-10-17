@@ -118,6 +118,10 @@
         Torbe
     </a>
 
+    <a href="mini-torbe.html" class="desktop-nav-link">
+        Mini torbe
+    </a>
+
     <a href="marame.html" class="desktop-nav-link">
         Marame
     </a>
@@ -173,6 +177,10 @@
             Torbe
         </a>
 
+        <a href="mini-torbe.html" class="mobile-menu-link">
+            Mini torbe
+        </a>
+
         <a href="marame.html" class="mobile-menu-link">
             Marame
         </a>
@@ -200,6 +208,81 @@
         </header>
 
 
+        <!-- HERO — MINI -->
+
+<section class="sold-out-section hero-live" id="mini-hero">
+
+    <a href="mini-torbe.html" class="sold-out-hero" aria-label="KROSH mini torbe">
+        <video
+            id="mini-hero-video"
+            src="images/home/mini-hero-mobile.mp4"
+            poster="images/home/mini-hero-mobile-poster.webp"
+            autoplay
+            loop
+            muted
+            playsinline
+            preload="metadata"
+        ></video>
+        <script>
+            (function () {
+                var v = document.getElementById("mini-hero-video");
+                if (v && window.matchMedia("(min-width: 768px)").matches) {
+                    v.poster = "images/home/mini-hero-poster.webp";
+                    v.src = "images/home/mini-hero.mp4";
+                }
+            })();
+        </script>
+    </a>
+
+</section>
+
+        <!-- OTHER PRODUCTS -->
+
+        <section class="home-categories">
+
+            <h2 class="home-categories-title">
+                Pogledaj sve proizvode
+                <span class="home-categories-title-arrow" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M6 9L12 15L18 9"></path>
+                    </svg>
+                </span>
+            </h2>
+
+            <div class="home-categories-list">
+
+                <a href="torbe.html" class="home-category-card" style="--img-w: 75%; --img-x: 63%;">
+                    <span class="home-category-card-thumb">
+                        <img src="images/home/cat-torbe.webp" alt="" loading="lazy">
+                    </span>
+                    <span class="home-category-card-title">Torbe</span>
+                </a>
+
+                <a href="mini-torbe.html" class="home-category-card" style="--img-w: 40%; --img-x: 75%;">
+                    <span class="home-category-card-thumb">
+                        <img src="images/home/cat-mini-torbe.webp" alt="" loading="lazy">
+                    </span>
+                    <span class="home-category-card-title">Mini torbe</span>
+                </a>
+
+                <a href="marame.html" class="home-category-card" style="--img-w: 75%; --img-x: 65%;">
+                    <span class="home-category-card-thumb">
+                        <img src="images/home/cat-marame.webp" alt="" loading="lazy">
+                    </span>
+                    <span class="home-category-card-title">Marame</span>
+                </a>
+
+                <a href="aksesoari.html" class="home-category-card" style="--img-w: 50%; --img-x: 74%;">
+                    <span class="home-category-card-thumb">
+                        <img src="images/home/cat-aksesoari.webp" alt="" loading="lazy">
+                    </span>
+                    <span class="home-category-card-title">Aksesoari</span>
+                </a>
+
+            </div>
+
+        </section>
+
         <!-- HERO -->
 
 <section class="sold-out-section hero-live" id="hero-live">
@@ -221,45 +304,6 @@
 
 </section>
 
-        <!-- OTHER PRODUCTS -->
-
-        <section class="home-categories">
-
-            <h2 class="home-categories-title">
-                Pogledaj sve proizvode
-                <span class="home-categories-title-arrow" aria-hidden="true">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M6 9L12 15L18 9"></path>
-                    </svg>
-                </span>
-            </h2>
-
-            <div class="home-categories-list">
-
-                <a href="torbe.html" class="home-category-card">
-                    <span class="home-category-card-thumb">
-                        <img src="images/home/torbe.svg" alt="">
-                    </span>
-                    <span class="home-category-card-title">Torbe</span>
-                </a>
-
-                <a href="marame.html" class="home-category-card">
-                    <span class="home-category-card-thumb">
-                        <img src="images/home/marame.svg" alt="">
-                    </span>
-                    <span class="home-category-card-title">Marame</span>
-                </a>
-
-                <a href="aksesoari.html" class="home-category-card">
-                    <span class="home-category-card-thumb">
-                        <img src="images/home/aksesoari.svg" alt="">
-                    </span>
-                    <span class="home-category-card-title">Aksesoari</span>
-                </a>
-
-            </div>
-
-        </section>
 
 
         <!-- ABOUT -->

@@ -3489,7 +3489,7 @@ body.menu-open {
     margin: 0 0 20px;
 
     color: #181818;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     line-height: 1.2;
 }
@@ -3520,53 +3520,61 @@ body.menu-open {
 
 .home-categories-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 12px;
+    margin: 24px 0 24px;
 }
 
 .home-category-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-
-    text-decoration: none;
-    color: inherit;
-}
-
-.home-category-card-thumb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
+    position: relative;
+    display: block;
+    aspect-ratio: 9 / 5;
 
     border: 1px solid #e2e2e2;
     border-radius: 4px;
 
-    transition:
-        border-color 0.2s ease,
-        transform 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+
+    transition: border-color 0.2s ease;
 }
 
-.home-category-card:active .home-category-card-thumb {
-    transform: scale(0.96);
+.home-category-card:hover {
+    border-color: #c9c9c9;
+}
+
+.home-category-card-thumb {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
 }
 
 .home-category-card-thumb img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
+    position: absolute;
+    top: 46%;
+    left: var(--img-x, 65%);
+    width: var(--img-w, 60%);
+    height: auto;
+    transform: translate(-50%, -50%);
+    transition: transform 0.25s ease;
+}
+
+.home-category-card:hover .home-category-card-thumb img {
+    transform: translate(-50%, -50%) scale(1.04);
 }
 
 .home-category-card-title {
-    font-size: 13px;
+    position: absolute;
+    left: 12px;
+    right: 52%;
+    bottom: 10px;
+
+    font-size: 12px;
     font-weight: 600;
-    text-align: center;
+    line-height: 1.25;
+    text-align: left;
 }
+
 
 
 /* =========================
@@ -3745,32 +3753,14 @@ body.menu-open {
     }
 
     .home-categories-list {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 16px;
-    }
-
-    .home-category-card {
-        width: 100%;
-    }
-
-    .home-category-card-thumb {
-        width: 100%;
-        aspect-ratio: 5 / 2;
-        padding: 6px 24px;
-    }
-
-    .home-category-card-thumb img {
-        width: auto;
-        height: 100%;
-        max-width: 100%;
-    }
-
-    .home-category-card-thumb:hover {
-        border-color: #c9c9c9;
+        margin: 28px 0 24px;
     }
 
     .home-category-card-title {
+        left: 14px;
+        bottom: 12px;
         font-size: 14px;
     }
 
@@ -3833,3 +3823,162 @@ body.menu-open {
     margin-bottom: 0;
 }
 
+
+
+/* =========================
+   MINI TORBE
+========================= */
+
+.mini-configurator {
+    width: 100%;
+}
+
+.mini-preview {
+    position: relative;
+    width: 88%;
+    aspect-ratio: 5 / 7;
+    margin: -20px auto -24px;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.mini-controls {
+    position: relative;
+    z-index: 1;
+}
+
+.mini-preview > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.mini-meta {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+
+    margin: 0 0 16px;
+}
+
+.mini-price,
+.mini-size {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.mini-price {
+    margin-left: auto;
+    text-align: right;
+    color: #181818;
+}
+
+.mini-size {
+    text-align: left;
+    color: #7d7d7d;
+}
+
+.mini-info {
+    margin: 44px 0 0;
+
+    font-size: 13px;
+    line-height: 1.7;
+    color: #181818;
+}
+
+.mini-info-link {
+    color: #FF87BA;
+    text-decoration: underline;
+}
+
+@media (min-width: 992px) {
+
+    .mini-layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: clamp(12px, 2vw, 28px);
+        align-items: start;
+    }
+
+    .mini-controls {
+        grid-column: 1;
+        grid-row: 1;
+        min-width: 0;
+        padding-top: 6px;
+    }
+
+    .mini-preview {
+        grid-column: 2;
+        grid-row: 1;
+        width: 100%;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .mini-price,
+    .mini-size,
+    .mini-info {
+        font-size: 14px;
+    }
+}
+
+.lifestyle-credit-line {
+    margin: -2px 0 0;
+
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #7d7d7d;
+}
+
+.lifestyle-credit-line a {
+    color: inherit;
+    text-decoration: underline;
+}
+
+@media (max-width: 991px) {
+
+    .lifestyle .lifestyle-item {
+        flex: 0 0 64%;
+        width: 64%;
+        max-width: 64%;
+    }
+}
+
+/* =========================
+   HERO — MINI VIDEO
+========================= */
+
+.sold-out-hero video {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.home-categories + #hero-live {
+    margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+
+    .home-categories + #hero-live {
+        margin-top: 64px;
+    }
+}
+.home-categories-title-arrow {
+    display: none;
+}
+
+#mini-hero video {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+@media (min-width: 768px) {
+
+    #mini-hero video {
+        aspect-ratio: 4 / 3;
+    }
+}
