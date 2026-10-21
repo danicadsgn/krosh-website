@@ -52,7 +52,7 @@ const miniBags = [
   { id: "mini8", label: "", image: "images/mini-torbe/bags/mini8.webp", swatch: "images/mini-torbe/swatches/mini8.webp", width: 21, height: 17, soldOut: false },
   { id: "mini9", label: "", image: "images/mini-torbe/bags/mini9.webp", swatch: "images/mini-torbe/swatches/mini9.webp", width: 18, height: 16, soldOut: false },
   { id: "mini10", label: "", image: "images/mini-torbe/bags/mini10.webp", swatch: "images/mini-torbe/swatches/mini10.webp", width: 18, height: 15, soldOut: false },
-  { id: "mini11", label: "", image: "images/mini-torbe/bags/mini11.webp", swatch: "images/mini-torbe/swatches/mini11.webp", width: 20, height: 18, soldOut: false },
+  { id: "mini11", label: "", image: "images/mini-torbe/bags/mini11.webp", swatch: "images/mini-torbe/swatches/mini11.webp", width: 20, height: 18, soldOut: true },
   { id: "mini12", label: "", image: "images/mini-torbe/bags/mini12.webp", swatch: "images/mini-torbe/swatches/mini12.webp", width: 18, height: 16, soldOut: false },
   { id: "mini13", label: "", image: "images/mini-torbe/bags/mini13.webp", swatch: "images/mini-torbe/swatches/mini13.webp", width: 19, height: 16, soldOut: false }
 ];
