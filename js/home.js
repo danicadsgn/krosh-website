@@ -116,3 +116,25 @@ faqItems.forEach((item) => {
 
     question.setAttribute("aria-expanded", "false");
 });
+
+
+/* =========================
+   NEWSLETTER LINK (#newsletter)
+========================= */
+
+if (window.location.hash === "#newsletter") {
+    const newsletter = document.getElementById("newsletter");
+
+    if (newsletter) {
+        const goToNewsletter = () => {
+            newsletter.scrollIntoView({ behavior: "auto", block: "start" });
+        };
+
+        // Odskroluj nakon učitavanja, kad se slike i video slegnu, pa još jednom
+        // za slučaj da se raspored promeni.
+        window.addEventListener("load", () => {
+            goToNewsletter();
+            setTimeout(goToNewsletter, 600);
+        });
+    }
+}
