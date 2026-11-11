@@ -4006,3 +4006,38 @@ body.menu-open {
         font-size: 14px !important;
     }
 }
+
+/* Newsletter forma: isti font kao ostali tekst na sajtu (13px, na desktopu 14px) */
+#mlb2-44241246 input[type="email"],
+#mlb2-44241246 input[type="email"]::placeholder,
+#mlb2-44241246 .ml-button-horizontal button,
+#mlb2-44241246 .ml-mobileButton-horizontal button {
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+}
+
+#mlb2-44241246 input[type="email"]::placeholder {
+    font-weight: 400 !important;
+}
+
+@media (min-width: 992px) {
+    #mlb2-44241246 input[type="email"],
+    #mlb2-44241246 input[type="email"]::placeholder,
+    #mlb2-44241246 .ml-button-horizontal button,
+    #mlb2-44241246 .ml-mobileButton-horizontal button {
+        font-size: 14px !important;
+    }
+}
+
+html body #mlb2-44241246.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+    font-family: "Roboto Mono", monospace !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    line-height: 1.6 !important;
+}
+
+@media (min-width: 992px) {
+    html body #mlb2-44241246.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button {
+        font-size: 14px !important;
+    }
+}
