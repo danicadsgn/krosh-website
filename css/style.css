@@ -3993,3 +3993,16 @@ body.menu-open {
         margin-top: 64px;
     }
 }
+
+#mlb2-44241246 .ml-form-embedContent p.newsletter-text {
+    font-size: 13px !important;
+    font-weight: 400 !important;
+    line-height: 1.6 !important;
+    color: #181818 !important;
+}
+
+@media (min-width: 992px) {
+    #mlb2-44241246 .ml-form-embedContent p.newsletter-text {
+        font-size: 14px !important;
+    }
+}
