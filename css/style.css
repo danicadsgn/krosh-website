@@ -4041,3 +4041,14 @@ html body #mlb2-44241246.ml-form-embedContainer .ml-form-embedWrapper .ml-form-e
         font-size: 14px !important;
     }
 }
+
+#newsletter + .home-categories {
+    margin-top: 24px;
+}
+
+@media (min-width: 768px) {
+
+    #newsletter + .home-categories {
+        margin-top: 36px;
+    }
+}
