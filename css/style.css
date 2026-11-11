@@ -4052,3 +4052,7 @@ html body #mlb2-44241246.ml-form-embedContainer .ml-form-embedWrapper .ml-form-e
         margin-top: 36px;
     }
 }
+
+.configurator[hidden] + .lifestyle {
+    margin-top: 24px;
+}
