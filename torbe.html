@@ -232,7 +232,7 @@
 <script>
 (function () {
     var unlocked = false;
-    try { unlocked = localStorage.getItem("krosh_unlocked") === "1"; } catch (e) {}
+    try { unlocked = localStorage.getItem("krosh_unlocked_c3") === "1"; } catch (e) {}
 
     // Dok je kolekcija zaključana, ne zovemo posetioce da prave kombinaciju
     var invite = document.querySelector(".description.secondary");
@@ -1294,7 +1294,7 @@
 <script>
 (function () {
     var unlocked = false;
-    try { unlocked = localStorage.getItem("krosh_unlocked") === "1"; } catch (e) {}
+    try { unlocked = localStorage.getItem("krosh_unlocked_c3") === "1"; } catch (e) {}
 
     var soldOutSection = document.querySelector(".sold-out-section");
     var configuratorSection = document.querySelector(".configurator");

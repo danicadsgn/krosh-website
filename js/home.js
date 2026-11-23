@@ -19,7 +19,7 @@ if (unlockForm && unlockInput) {
 
         if (entered === correct) {
             try {
-                localStorage.setItem("krosh_unlocked", "1");
+                localStorage.setItem("krosh_unlocked_c3", "1");
             } catch (err) {}
 
             window.location.href = "torbe.html";
