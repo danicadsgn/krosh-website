@@ -1,39 +1,44 @@
+// TREĆA KOLEKCIJA. VAŽNO: color (hex) i label su PRIVREMENI (procenjeni sa slika)
+// dok ne stignu prave boje i nazivi. id mora ostati isti kao u nazivima fajlova.
 const bags = [
-  { id: "peach", color: "#D99E9C", label: "Peach", soldOut: false },
-  { id: "butteryellow", color: "#FFFBC5", label: "Butter Yellow", soldOut: false },
-  { id: "royalblue", color: "#0043C0", label: "Royal Blue", soldOut: true },
   { id: "black", color: "#101010", label: "Black", soldOut: false },
-  { id: "green", color: "#049F6E", label: "Green", soldOut: false },
-  { id: "jeans", color: "#4A66A3", label: "Jeans", soldOut: true },
-  { id: "pink", color: "#FE7BE2", label: "Pink", soldOut: false },
-  { id: "pearlwhite", color: "#F8F3EC", label: "Pearl White", soldOut: false },
-  { id: "navy", color: "#2F3955", label: "Navy", soldOut: false },
-  { id: "red", color: "#C80C35", label: "Red", soldOut: true },
-  { id: "beige", color: "#F5E3D1", label: "Beige", soldOut: false },
-  { id: "olive", color: "#96B3A5", label: "Olive", soldOut: true },
-  { id: "blue", color: "#357EDE", label: "Blue", soldOut: false },
-  { id: "maroon", color: "#6C3334", label: "Maroon", soldOut: false },
-  { id: "truewhite", color: "#EEF5F8", label: "True White", soldOut: false },
-  { id: "purple", color: "#7C52C9", label: "Purple", soldOut: false },
-  { id: "terracotta", color: "#C24037", label: "Terracotta", soldOut: true }
+  { id: "silver", color: "#E0E0D7", label: "Silver", swatch: "images/bag-colors/silver.png", soldOut: false },
+  { id: "nude", color: "#B7A199", label: "Nude", soldOut: false },
+  { id: "plum", color: "#562D49", label: "Plum", soldOut: false },
+  { id: "mocha", color: "#7A6A64", label: "Mocha", swatch: "images/bag-colors/mocha.png", soldOut: false },
+  { id: "darkgreen", color: "#2E5044", label: "Dark Green", soldOut: false },
+  { id: "peach", color: "#DE988A", label: "Peach", soldOut: false },
+  { id: "darkchocolate", color: "#382820", label: "Dark Chocolate", soldOut: false },
+  { id: "yellow", color: "#FEEEB8", label: "Yellow", soldOut: false },
+  { id: "maroon", color: "#56201C", label: "Maroon", soldOut: false },
+  { id: "lightgrey", color: "#888888", label: "Light Grey", soldOut: false },
+  { id: "forrest", color: "#243B40", label: "Forrest", soldOut: false },
+  { id: "burgundy", color: "#760014", label: "Burgundy", soldOut: false },
+  { id: "coffee", color: "#66391C", label: "Coffee", soldOut: false },
+  { id: "white", color: "#F8F3EC", label: "White", soldOut: false },
+  { id: "bronze", color: "#5E4F4C", label: "Bronze", swatch: "images/bag-colors/bronze.png", soldOut: false },
+  { id: "darkgrey", color: "#2F2F32", label: "Dark Grey", soldOut: false },
+  { id: "blue", color: "#357EDE", label: "Blue", soldOut: false }
 ];
 
+// id mora da odgovara nazivu u images/combinations/bag-<bag>_pouch-<id>.webp
 const pouches = [
-  { id: "blueplaid", image: "images/pouches/blueplaid.webp", soldOut: false },
   { id: "pink", image: "images/pouches/pink.webp", soldOut: false },
-  { id: "garden", image: "images/pouches/garden.webp", soldOut: false },
-  { id: "silverfloral", image: "images/pouches/silverfloral.webp", soldOut: false },
   { id: "blackwhite", image: "images/pouches/blackwhite.webp", soldOut: false },
-  { id: "orangeplaid", image: "images/pouches/orangeplaid.webp", soldOut: false },
-  { id: "bluefloral", image: "images/pouches/bluefloral.webp", soldOut: false },
-  { id: "pastel", image: "images/pouches/pastel.webp", soldOut: true },
-  { id: "yellow", image: "images/pouches/yellow.webp", soldOut: false },
-  { id: "cars", image: "images/pouches/cars.webp", soldOut: false },
-  { id: "redplaid", image: "images/pouches/redplaid.webp", soldOut: true },
+  { id: "greencheck", image: "images/pouches/green.webp", soldOut: false },
+  { id: "fall", image: "images/pouches/fall.webp", soldOut: false },
+  { id: "beige", image: "images/pouches/beige.webp", soldOut: false },
+  { id: "garden", image: "images/pouches/garden.webp", soldOut: false },
+  { id: "silver", image: "images/pouches/silver.webp", soldOut: false },
+  { id: "purple", image: "images/pouches/purple.webp", soldOut: false },
+  { id: "gold", image: "images/pouches/gold.webp", soldOut: false },
+  { id: "magenta", image: "images/pouches/magenta.webp", soldOut: false },
+  { id: "redplaid", image: "images/pouches/redplaid.webp", soldOut: false },
+  { id: "silverfloral", image: "images/pouches/silverfloral.webp", soldOut: false },
+  { id: "black", image: "images/pouches/black.webp", soldOut: false },
+  { id: "greenplaid", image: "images/pouches/greenplaid.webp", soldOut: false },
   { id: "beigestripes", image: "images/pouches/beigestripes.webp", soldOut: false },
-  { id: "darkplaid", image: "images/pouches/darkplaid.webp", soldOut: true },
-  { id: "lightblueplaid", image: "images/pouches/lightblueplaid.webp", soldOut: false },
-  { id: "lines", image: "images/pouches/lines.webp", soldOut: true }
+  { id: "blueplaid", image: "images/pouches/blueplaid.webp", soldOut: false }
 ];
 
 // Mini torbe — jedna cena za sve, boje su gotove slike (nema kombinacija).

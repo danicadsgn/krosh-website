@@ -69,7 +69,7 @@
 
     <link
         rel="stylesheet"
-        href="css/style.css?v=20261117"
+        href="css/style.css?v=20261130"
     >
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7M1B84SQN"></script>
@@ -228,6 +228,17 @@
             </p>
 
         </header>
+
+<script>
+(function () {
+    var unlocked = false;
+    try { unlocked = localStorage.getItem("krosh_unlocked") === "1"; } catch (e) {}
+
+    // Dok je kolekcija zaključana, ne zovemo posetioce da prave kombinaciju
+    var invite = document.querySelector(".description.secondary");
+    if (invite) { invite.hidden = !unlocked; }
+})();
+</script>
 
 
         <!-- CONFIGURATOR -->
@@ -1280,6 +1291,19 @@
 
             </section>
 
+<script>
+(function () {
+    var unlocked = false;
+    try { unlocked = localStorage.getItem("krosh_unlocked") === "1"; } catch (e) {}
+
+    var soldOutSection = document.querySelector(".sold-out-section");
+    var configuratorSection = document.querySelector(".configurator");
+
+    soldOutSection.hidden = unlocked;
+    configuratorSection.hidden = !unlocked;
+})();
+</script>
+
         <section class="lifestyle">
 
     <img
@@ -1326,12 +1350,12 @@
                     alt="KROSH torba u svakodnevnom nošenju"
                 >
                 <a
-                    href="https://www.instagram.com/ohneeeeee/"
+                    href="https://www.instagram.com/unchillscenario/"
                     class="lifestyle-credit"
                     target="_blank"
                     rel="noopener noreferrer"
                     onclick="event.stopPropagation()"
-                >Photo by: ohneeeeee</a>
+                >Photo by: unchillscenario</a>
             </div>
 
             <div class="lifestyle-item">
@@ -1365,6 +1389,20 @@
             <div class="lifestyle-item">
                 <img
                     src="images/lifestyle/krosh-lifestyle-6.webp"
+                    alt="KROSH torba u svakodnevnom nošenju"
+                >
+                <a
+                    href="https://www.instagram.com/ohneeeeee/"
+                    class="lifestyle-credit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onclick="event.stopPropagation()"
+                >Photo by: ohneeeeee</a>
+            </div>
+
+            <div class="lifestyle-item">
+                <img
+                    src="images/lifestyle/krosh-lifestyle-7.webp"
                     alt="KROSH torba u svakodnevnom nošenju"
                 >
                 <a
@@ -1451,10 +1489,10 @@
             <p class="lightbox-credit">
                 Photo by:
                 <a
-                    href="https://www.instagram.com/ohneeeeee/"
+                    href="https://www.instagram.com/unchillscenario/"
                     target="_blank"
                     rel="noopener noreferrer"
-                >ohneeeeee</a>
+                >unchillscenario</a>
             </p>
         </div>
 
@@ -1491,6 +1529,21 @@
         <div class="lightbox-slide">
             <img
                 src="images/lifestyle/krosh-lifestyle-6.webp"
+                alt="KROSH torba u svakodnevnom nošenju"
+            >
+            <p class="lightbox-credit">
+                Photo by:
+                <a
+                    href="https://www.instagram.com/ohneeeeee/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >ohneeeeee</a>
+            </p>
+        </div>
+
+        <div class="lightbox-slide">
+            <img
+                src="images/lifestyle/krosh-lifestyle-7.webp"
                 alt="KROSH torba u svakodnevnom nošenju"
             >
             <p class="lightbox-credit">

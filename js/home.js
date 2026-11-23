@@ -1,4 +1,40 @@
 /* =========================
+   EARLY ACCESS UNLOCK
+========================= */
+
+// Lozinka za otključavanje kolekcije (ne razlikuje velika i mala slova).
+const EARLY_ACCESS_PASSWORD = "kroshjesen";
+
+const unlockForm = document.querySelector("#unlock-form");
+const unlockInput = document.querySelector("#unlock-password");
+const unlockError = document.querySelector("#unlock-error");
+
+if (unlockForm && unlockInput) {
+
+    unlockForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const entered = unlockInput.value.trim().toLowerCase();
+        const correct = EARLY_ACCESS_PASSWORD.trim().toLowerCase();
+
+        if (entered === correct) {
+            try {
+                localStorage.setItem("krosh_unlocked", "1");
+            } catch (err) {}
+
+            window.location.href = "torbe.html";
+        } else {
+            unlockError.hidden = false;
+        }
+    });
+
+    unlockInput.addEventListener("input", () => {
+        unlockError.hidden = true;
+    });
+}
+
+
+/* =========================
    MOBILE MENU
 ========================= */
 

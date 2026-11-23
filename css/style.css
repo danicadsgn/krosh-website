@@ -4056,3 +4056,103 @@ html body #mlb2-44241246.ml-form-embedContainer .ml-form-embedWrapper .ml-form-e
 .configurator[hidden] + .lifestyle {
     margin-top: 24px;
 }
+
+/* =========================
+   HERO — UNLOCK (lozinka)
+========================= */
+
+.hero-lock {
+    margin-bottom: 24px;
+}
+
+.unlock-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.unlock-input {
+    width: 100%;
+    height: 48px;
+    padding: 12px 14px;
+    box-sizing: border-box;
+
+    border: 1px solid #111;
+    border-radius: 0;
+    background: #fff;
+
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    color: #181818;
+}
+
+.unlock-input::placeholder {
+    color: #777;
+}
+
+.unlock-button {
+    height: 48px;
+    padding: 12px 20px;
+
+    border: 0;
+    border-radius: 0;
+    background: #FF87BA;
+    color: #ffffff;
+
+    font-family: "Roboto Mono", monospace;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.unlock-button:hover {
+    background: #ff73af;
+}
+
+.unlock-error {
+    margin: 10px 0 0;
+    font-size: 12px;
+    color: #C80C35;
+}
+
+.hero-unlocked-cta {
+    margin-bottom: 24px;
+}
+
+@media (min-width: 992px) {
+    .unlock-form {
+        flex-direction: row;
+    }
+
+    .unlock-input,
+    .unlock-button {
+        font-size: 14px;
+    }
+
+    .unlock-button {
+        flex: 0 0 150px;
+    }
+}
+
+.hero-unlocked-cta[hidden],
+.hero-lock[hidden] {
+    display: none !important;
+}
+
+#hero-collection .sold-out-content {
+    margin-top: 12px;
+    padding-top: 0;
+}
+
+/* Konfigurator bliže tekstu iznad (slike kombinacija imaju providan prostor oko torbe) */
+.configurator:not([hidden]) {
+    margin-top: -32px;
+}
+
+@media (min-width: 992px) {
+    .configurator:not([hidden]) {
+        margin-top: -12px;
+    }
+}

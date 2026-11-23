@@ -8,8 +8,8 @@ combinationImage.addEventListener("load", () => {
   previewLoader.classList.add("is-hidden");
 });
 
-let selectedBag = "pearlwhite";
-let selectedPouch = "cars";
+let selectedBag = "nude";
+let selectedPouch = "redplaid";
 
 function getFirstAvailableItem(items) {
   return items.find((item) => !item.soldOut);
@@ -34,11 +34,31 @@ if (!initialPouch || initialPouch.soldOut) {
   }
 }
 
-// preload svih kombinacija
-for (const bag of bags) {
-  for (const pouch of pouches) {
-    const img = new Image();
-    img.src = `images/combinations/bag-${bag.id}_pouch-${pouch.id}.webp`;
+// Preload samo susednih kombinacija: ista torba sa svim vrećicama i ista vrećica
+// sa svim torbama. Preload svih slika odjednom bi bio previše za telefone.
+const preloadedCombos = new Set();
+
+function preloadCombo(bagId, pouchId) {
+  const src = `images/combinations/bag-${bagId}_pouch-${pouchId}.webp`;
+
+  if (preloadedCombos.has(src)) return;
+
+  preloadedCombos.add(src);
+
+  const img = new Image();
+  img.src = src;
+}
+
+function preloadRelatedCombos() {
+  const run = () => {
+    pouches.forEach((pouch) => preloadCombo(selectedBag, pouch.id));
+    bags.forEach((bag) => preloadCombo(bag.id, selectedPouch));
+  };
+
+  if ("requestIdleCallback" in window) {
+    requestIdleCallback(run, { timeout: 2000 });
+  } else {
+    setTimeout(run, 300);
   }
 }
 
@@ -57,6 +77,8 @@ function updateCombinationImage() {
 
   combinationImage.src = nextSrc;
 
+  preloadRelatedCombos();
+
   if (combinationImage.complete) {
     previewLoader.classList.add("is-hidden");
   }
@@ -71,6 +93,12 @@ function renderBagOptions() {
     button.type = "button";
     button.classList.add("color-option");
     button.style.backgroundColor = bag.color;
+
+    if (bag.swatch) {
+      button.style.backgroundImage = `url("${bag.swatch}")`;
+      button.style.backgroundSize = "cover";
+      button.style.backgroundPosition = "center";
+    }
 
     if (bag.soldOut) {
       button.classList.add("sold-out");
