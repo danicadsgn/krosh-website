@@ -39,7 +39,7 @@ if (!initialPouch || initialPouch.soldOut) {
 const preloadedCombos = new Set();
 
 function preloadCombo(bagId, pouchId) {
-  const src = `images/combinations/bag-${bagId}_pouch-${pouchId}.webp`;
+  const src = `images/combinations/bag-${bagId}_pouch-${pouchId}.webp?v=3`;
 
   if (preloadedCombos.has(src)) return;
 
@@ -50,6 +50,16 @@ function preloadCombo(bagId, pouchId) {
 }
 
 function preloadRelatedCombos() {
+  // Slike su velike (oko 1 MB): ne preloaduj na sporoj vezi ili uz uključen "Data saver"
+  const connection = navigator.connection;
+
+  if (
+    connection &&
+    (connection.saveData || /(^|-)(2g|3g)$/.test(connection.effectiveType || ""))
+  ) {
+    return;
+  }
+
   const run = () => {
     pouches.forEach((pouch) => preloadCombo(selectedBag, pouch.id));
     bags.forEach((bag) => preloadCombo(bag.id, selectedPouch));
@@ -64,7 +74,7 @@ function preloadRelatedCombos() {
 
 function updateCombinationImage() {
   const nextSrc =
-    `images/combinations/bag-${selectedBag}_pouch-${selectedPouch}.webp`;
+    `images/combinations/bag-${selectedBag}_pouch-${selectedPouch}.webp?v=3`;
 
   if (combinationImage.getAttribute("src") === nextSrc) {
     if (combinationImage.complete) {
