@@ -13,7 +13,7 @@ const bags = [
   { id: "maroon", color: "#56201C", label: "Maroon", soldOut: false },
   { id: "lightgrey", color: "#888888", label: "Light Grey", soldOut: false },
   { id: "forrest", color: "#243B40", label: "Forrest", soldOut: false },
-  { id: "burgundy", color: "#760014", label: "Burgundy", soldOut: false },
+  { id: "burgundy", color: "#760014", label: "Burgundy", soldOut: true },
   { id: "coffee", color: "#66391C", label: "Coffee", soldOut: false },
   { id: "white", color: "#F8F3EC", label: "White", soldOut: false },
   { id: "bronze", color: "#5E4F4C", label: "Bronze", swatch: "images/bag-colors/bronze.png", soldOut: false },
