@@ -69,7 +69,7 @@
 
     <link
         rel="stylesheet"
-        href="css/style.css?v=20261130"
+        href="css/style.css?v=20261206"
     >
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-J7M1B84SQN"></script>
@@ -229,23 +229,11 @@
 
         </header>
 
-<script>
-(function () {
-    var unlocked = false;
-    try { unlocked = localStorage.getItem("krosh_unlocked_c3") === "1"; } catch (e) {}
-
-    // Dok je kolekcija zaključana, ne zovemo posetioce da prave kombinaciju
-    var invite = document.querySelector(".description.secondary");
-    if (invite) { invite.hidden = !unlocked; }
-})();
-</script>
-
-
-        <!-- CONFIGURATOR -->
+<!-- CONFIGURATOR -->
 
         <!-- SOLD OUT -->
 
-<section class="sold-out-section">
+<section class="sold-out-section" hidden>
 
     <div class="sold-out-hero">
         <img
@@ -1177,7 +1165,7 @@
 
 </section>
 
-        <section class="configurator" hidden>
+        <section class="configurator">
 
             <div class="configurator-layout">
 
@@ -1291,20 +1279,7 @@
 
             </section>
 
-<script>
-(function () {
-    var unlocked = false;
-    try { unlocked = localStorage.getItem("krosh_unlocked_c3") === "1"; } catch (e) {}
-
-    var soldOutSection = document.querySelector(".sold-out-section");
-    var configuratorSection = document.querySelector(".configurator");
-
-    soldOutSection.hidden = unlocked;
-    configuratorSection.hidden = !unlocked;
-})();
-</script>
-
-        <section class="lifestyle">
+<section class="lifestyle">
 
     <img
         src="images/ui/u-akciji.svg"
